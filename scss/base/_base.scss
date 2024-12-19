@@ -1,0 +1,28 @@
+*, ::before, ::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+    font-family: 'Gordita';
+}
+
+a {
+    text-decoration: none;
+}
+
+button, textarea, select, input {
+    font-size: inherit;
+    font-style: inherit;
+    color: inherit;
+}
+
+button {
+    border: none;
+    background: transparent;
+    outline: none;
+}
