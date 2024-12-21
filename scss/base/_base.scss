@@ -1,6 +1,11 @@
-*, ::before, ::after {
+/*common*/
+*,
+::before,
+::after {
     box-sizing: border-box;
 }
+
+
 
 html {
     font-size: 62.5%;
@@ -8,16 +13,21 @@ html {
 
 body {
     font-size: 1.6rem;
-    font-family: 'Gordita';
+    font-family: "Gordita";
+    color: var(--text-color);
 }
 
 a {
     text-decoration: none;
+    color: inherit;
 }
 
-button, textarea, select, input {
+button,
+textarea,
+select,
+input {
     font-size: inherit;
-    font-style: inherit;
+    font-family: inherit;
     color: inherit;
 }
 
@@ -25,4 +35,10 @@ button {
     border: none;
     background: transparent;
     outline: none;
+    cursor: pointer;
+
+}
+
+.icon {
+    filter: var(--icon-color);
 }
