@@ -1,12 +1,36 @@
 /*logo*/
+@use "../abstracts";
+//lg :tablet  sm: mobile  xl: <1200
+
 .logo {
     display: flex;
     align-items: center;
     margin-right: 10.7462%;
     gap: 14px;
+
+    // when the screen <1200px navbar is too close search icon => reduce margin right
+    @include abstracts.breakpoint(xl) {
+        margin-right: 1.7462%;
+    }
+    
+    @include abstracts.breakpoint(lg) {
+        margin-left: auto;
+        margin-right: auto;
+        gap: 10px;
+    }
+
+    &__svg {
+        @include abstracts.breakpoint(lg) {
+            width: 24px;
+        }
+    }
     &__title {
         font-size: 2.2rem;
         font-weight: 700;
         line-height: 145.455%;
+        @include abstracts.breakpoint(lg) {
+            font-size: 1.8rem;
+            line-height: 144.444%;
+        }
     }
 }

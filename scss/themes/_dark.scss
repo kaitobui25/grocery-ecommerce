@@ -1,4 +1,6 @@
 /*dart mode*/
+@use "../abstracts";
+
 html.dark {
     --text-color: #fff;
     --icon-color: brightness(0) saturate(100%) invert(100%) sepia(0%)
@@ -7,4 +9,7 @@ html.dark {
     --top-act-group-bg-color: #292e39;
     --top-act-group-shadow-color: rgba(0, 0, 0, 0.2);
     --top-act-separate-bg-color: #ededf6;
+    --body-color:#292E39;
+
+
 }

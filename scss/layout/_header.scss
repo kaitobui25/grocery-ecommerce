@@ -6,16 +6,34 @@
     align-items: center;
 }
 .header {
-    background-color: var( --header-bg-color);
+    background-color: var(--header-bg-color);
     padding: 30px 0px;
+
+    @include abstracts.breakpoint(lg) {
+        padding: 22px 0px;
+    }
+    
+    @include abstracts.breakpoint(sm) {
+        padding: 16px 0px;
+    }
 }
 
 .top-bar {
     @extend %flexItemCenter;
     justify-content: space-between;
+
+    &-more {
+        display: none;
+        @include abstracts.breakpoint(lg) {
+            display: block;
+        }
+    }
 }
 
 .navbar {
+    @include abstracts.breakpoint(lg) {
+        display: none;
+    }
     &__list {
         @extend %flexItemCenter;
         gap: 30px;
@@ -37,10 +55,19 @@
     gap: 20px;
     &__group {
         @extend %flexItemCenter;
-        // gap: 20px;
         border-radius: 8px;
         background: var(--top-act-group-bg-color);
         box-shadow: 0px 20px 60px 10px var(--top-act-group-shadow-color);
+
+        @include abstracts.breakpoint(sm) {
+            display: none;
+        }
+    }
+
+    &__group--single {
+        @include abstracts.breakpoint(lg) {
+            display: none;
+        }
     }
 
     &__group--single &__btn {
