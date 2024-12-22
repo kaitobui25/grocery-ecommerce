@@ -12,15 +12,15 @@
     @include abstracts.breakpoint(lg) {
         padding: 22px 0px;
     }
-    
+
     @include abstracts.breakpoint(sm) {
         padding: 16px 0px;
     }
 }
 
 .top-bar {
+    position: relative;
     @extend %flexItemCenter;
-    justify-content: space-between;
 
     &-more {
         display: none;
@@ -36,14 +36,29 @@
     }
     &__list {
         @extend %flexItemCenter;
-        gap: 30px;
     }
+
+    &__list-item {
+        &:first-child a {
+            padding-left: 0;
+        }
+        &:last-child a {
+            padding-right: 0;
+        }
+
+        &:hover .dropdown {
+            display: block;
+        }
+    }
+
     &__link {
         display: flex;
+        padding: 14px 15px;
         gap: 6px;
         font-size: 1.5rem;
         font-weight: 500;
         line-height: 146.667%;
+        
     }
     &__arrow {
         padding-top: 4px;
@@ -52,6 +67,7 @@
 
 .top-act {
     @extend %flexItemCenter;
+    margin-left: auto;
     gap: 20px;
     &__group {
         @extend %flexItemCenter;

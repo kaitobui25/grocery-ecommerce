@@ -1218,7 +1218,11 @@ html.dark {
   --top-act-group-bg-color: #292e39;
   --top-act-group-shadow-color: rgba(0, 0, 0, 0.2);
   --top-act-separate-bg-color: #ededf6;
-  --body-color:#292E39;
+  --body-color: #292e39;
+  --dropdown-bg-color: #2f3441;
+  --dropdown-shadow-color: rgba(23, 28, 40, 0.40);
+  --dropdown-text-color: #B9BABE;
+  --dropdown-arrow-color: brightness(0) saturate(100%) invert(16%) sepia(14%) saturate(1087%) hue-rotate(186deg) brightness(91%) contrast(85%);
 }
 
 html {
@@ -1230,6 +1234,8 @@ html {
   --top-act-group-shadow-color: rgba(237, 237, 246, 0.2);
   --top-act-separate-bg-color: #ededf6;
   --body-color:#F6F6F6;
+  --dropdown-bg-color: #fff;
+  --dropdown-shadow-color: rgba(200, 200, 200, 0.4);
 }
 @media (max-width: 991.98px) {
   html {
@@ -1259,7 +1265,7 @@ html {
 }
 
 .top-bar {
-  justify-content: space-between;
+  position: relative;
 }
 .top-bar-more {
   display: none;
@@ -1275,11 +1281,18 @@ html {
     display: none;
   }
 }
-.navbar__list {
-  gap: 30px;
+.navbar__list-item:first-child a {
+  padding-left: 0;
+}
+.navbar__list-item:last-child a {
+  padding-right: 0;
+}
+.navbar__list-item:hover .dropdown {
+  display: block;
 }
 .navbar__link {
   display: flex;
+  padding: 14px 15px;
   gap: 6px;
   font-size: 1.5rem;
   font-weight: 500;
@@ -1290,6 +1303,7 @@ html {
 }
 
 .top-act {
+  margin-left: auto;
   gap: 20px;
 }
 .top-act__group {
@@ -1366,6 +1380,33 @@ html {
     font-size: 1.8rem;
     line-height: 144.444%;
   }
+}
+
+/*Dropdown*/
+.dropdown {
+  display: none;
+  position: absolute;
+  left: 0;
+  padding-top: 54px;
+}
+.dropdown__inner {
+  position: relative;
+  padding: 30px;
+  width: 1240px;
+  max-width: 100%;
+  border-radius: 20px;
+  background: var(--dropdown-bg-color);
+  box-shadow: 0px 40px 90px 20px var(--dropdown-shadow-color);
+  color: var(--dropdown-text-color);
+}
+.dropdown__inner::before {
+  position: absolute;
+  top: -14px;
+  left: var(--arrow-left-pos);
+  content: url("../icons/polygon.svg");
+  display: inline-block;
+  translate: -50%;
+  filter: var(--dropdown-arrow-color);
 }
 
 /*# sourceMappingURL=main.css.map */
