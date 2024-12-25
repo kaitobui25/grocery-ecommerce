@@ -11,6 +11,7 @@
 
     @include abstracts.breakpoint(lg) {
         padding: 22px 0px;
+        box-shadow: 0px 20px 60px 10px var(--header-shadow-color);
     }
 
     @include abstracts.breakpoint(sm) {
@@ -39,12 +40,6 @@
     }
 
     &__list-item {
-        &:first-child a {
-            padding-left: 0;
-        }
-        &:last-child a {
-            padding-right: 0;
-        }
 
         &:hover .dropdown {
             display: block;
@@ -68,6 +63,10 @@
 .top-act {
     @extend %flexItemCenter;
     margin-left: auto;
+
+    @include abstracts.breakpoint(lg) {
+        margin-left: 0;
+    }
     gap: 20px;
     &__group {
         @extend %flexItemCenter;

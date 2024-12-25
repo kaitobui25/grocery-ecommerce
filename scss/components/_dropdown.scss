@@ -1,14 +1,14 @@
 /*Dropdown*/
 .dropdown {
-    display: none;
+    // display: none;
     position: absolute;
     left: 0;
     padding-top: 54px;
+    width: min(1240px, 100%);
     &__inner {
+        --inner-padding: 30px;
         position: relative;
-        padding: 30px;
-        width: 1240px;
-        max-width: 100%;
+        padding: var(--inner-padding);
         border-radius: 20px;
         background: var(--dropdown-bg-color);
         box-shadow: 0px 40px 90px 20px var(--dropdown-shadow-color);
@@ -17,12 +17,88 @@
             position: absolute;
             top: -14px;
             left: var(--arrow-left-pos);
-            content: url('../icons/polygon.svg');
+            content: url("../icons/polygon.svg");
             display: inline-block;
             translate: -50%;
             filter: var(--dropdown-arrow-color);
         }
     }
+}
 
-    
+.top-menu {
+    // max-height thì khi mà phần tử trong inner ít thì inner thu gọn lại
+    //thiết kế chiều cao la 582px, nhưng khi người dung thu nhỏ cửa sổ thì phần bên dưới sẽ kô nhìn thấy
+    //nên phải lấy 100vh - 160px. 160px là độ cao từ trên top xuống tới phần inner. xem file word
+    // vì đã padding trên dưới 30px nên phải trừ cho 60px thì mới ra chiều cao của top-menu
+    max-height: calc(min(582px, 100vh - 160px) - (var(--inner-padding) * 2));
+    &__main {
+        width: 392px;
+        max-height: inherit;
+        border-right: solid 1px var(--top-menu-main-border-color);
+
+        overflow-y: auto;
+    }
+}
+
+.menu-column {
+    display: flex;
+    gap: 14px;
+    &__icon {
+        position: relative;
+
+        //icon sẽ ko biị co lại khi mà nội dung text bên cạnh lớn lên
+        flex-shrink: 0;
+        width: 36px;
+        height: 36px;
+    }
+
+    &__icon-1 {
+        width: 30px;
+        height: 30px;
+        object-fit: cover;
+    }
+
+    &__icon-2 {
+        width: 18px;
+        height: 18px;
+        object-fit: cover;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        filter: var(--menu-column-icon-2-color);
+    }
+
+    &__content {
+        // content chiếm hết độ rộng còn lại
+        flex: 1;
+    }
+
+    &__heading {
+        margin-top: 6px;
+        color: var(--menu-column-heading-color);
+        font-weight: 500;
+        line-height: 150%;
+    }
+
+    &__list {
+        // margin top 26 nhung ma đã padding 7px rồi nên 26 - 7 = 19px
+        margin-top: 19px;
+    }
+
+    &__list li:last-child &__link {
+        padding-bottom: 0;
+    }
+
+    &__link {
+        display: block;
+        padding: 7px 0px;
+        color: var(--menu-column-item-color);
+        font-size: 1.4rem;
+        line-height: 142.857%;
+
+        &:hover {
+            color: #0071dc;
+            font-weight: 500;
+        }
+    }
 }

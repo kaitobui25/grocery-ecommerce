@@ -5,7 +5,8 @@
 .logo {
     display: flex;
     align-items: center;
-    margin-right: 10.7462%;
+    //( thiet ke 144px - padding right 15px thẻ a ) / 1340px = 9.6%
+    margin-right: 9.62686%;
     gap: 14px;
 
     // when the screen <1200px navbar is too close search icon => reduce margin right

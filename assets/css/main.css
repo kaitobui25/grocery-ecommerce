@@ -1220,9 +1220,21 @@ html.dark {
   --top-act-separate-bg-color: #ededf6;
   --body-color: #292e39;
   --dropdown-bg-color: #2f3441;
-  --dropdown-shadow-color: rgba(23, 28, 40, 0.40);
-  --dropdown-text-color: #B9BABE;
-  --dropdown-arrow-color: brightness(0) saturate(100%) invert(16%) sepia(14%) saturate(1087%) hue-rotate(186deg) brightness(91%) contrast(85%);
+  --dropdown-shadow-color: rgba(23, 28, 40, 0.4);
+  --dropdown-text-color: #b9babe;
+  --dropdown-arrow-color: brightness(0) saturate(100%) invert(16%) sepia(14%)
+      saturate(1087%) hue-rotate(186deg) brightness(91%) contrast(85%);
+  --top-menu-main-border-color: #171c28;
+  --menu-column-heading-color: #b9babe;
+  --menu-column-item-color: #b9babe;
+  --menu-column-icon-2-color: brightness(0) saturate(100%) invert(99%)
+      sepia(4%) saturate(1164%) hue-rotate(180deg) brightness(92%)
+      contrast(115%);
+}
+@media (max-width: 991.98px) {
+  html.dark {
+    --header-shadow-color: rgba(0, 0, 0, 0.2);
+  }
 }
 
 html {
@@ -1233,13 +1245,17 @@ html {
   --top-act-group-bg-color: #fff;
   --top-act-group-shadow-color: rgba(237, 237, 246, 0.2);
   --top-act-separate-bg-color: #ededf6;
-  --body-color:#F6F6F6;
+  --body-color: #f6f6f6;
   --dropdown-bg-color: #fff;
   --dropdown-shadow-color: rgba(200, 200, 200, 0.4);
+  --top-menu-main-border-color: #d2d1d6;
+  --menu-column-heading-color: #1a162e;
+  --menu-column-item-color: #1a162e;
 }
 @media (max-width: 991.98px) {
   html {
     --header-bg-color: #fff;
+    --header-shadow-color:rgba(237, 237, 246, 0.20);
   }
 }
 
@@ -1256,6 +1272,7 @@ html {
 @media (max-width: 991.98px) {
   .header {
     padding: 22px 0px;
+    box-shadow: 0px 20px 60px 10px var(--header-shadow-color);
   }
 }
 @media (max-width: 575.98px) {
@@ -1281,12 +1298,6 @@ html {
     display: none;
   }
 }
-.navbar__list-item:first-child a {
-  padding-left: 0;
-}
-.navbar__list-item:last-child a {
-  padding-right: 0;
-}
 .navbar__list-item:hover .dropdown {
   display: block;
 }
@@ -1305,6 +1316,11 @@ html {
 .top-act {
   margin-left: auto;
   gap: 20px;
+}
+@media (max-width: 991.98px) {
+  .top-act {
+    margin-left: 0;
+  }
 }
 .top-act__group {
   border-radius: 8px;
@@ -1350,7 +1366,7 @@ html {
 .logo {
   display: flex;
   align-items: center;
-  margin-right: 10.7462%;
+  margin-right: 9.62686%;
   gap: 14px;
 }
 @media (max-width: 1199.98px) {
@@ -1384,16 +1400,15 @@ html {
 
 /*Dropdown*/
 .dropdown {
-  display: none;
   position: absolute;
   left: 0;
   padding-top: 54px;
+  width: min(1240px, 100%);
 }
 .dropdown__inner {
+  --inner-padding: 30px;
   position: relative;
-  padding: 30px;
-  width: 1240px;
-  max-width: 100%;
+  padding: var(--inner-padding);
   border-radius: 20px;
   background: var(--dropdown-bg-color);
   box-shadow: 0px 40px 90px 20px var(--dropdown-shadow-color);
@@ -1407,6 +1422,67 @@ html {
   display: inline-block;
   translate: -50%;
   filter: var(--dropdown-arrow-color);
+}
+
+.top-menu {
+  max-height: calc(min(582px, 100vh - 160px) - var(--inner-padding) * 2);
+}
+.top-menu__main {
+  width: 392px;
+  max-height: inherit;
+  border-right: solid 1px var(--top-menu-main-border-color);
+  overflow-y: auto;
+}
+
+.menu-column {
+  display: flex;
+  gap: 14px;
+}
+.menu-column__icon {
+  position: relative;
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+}
+.menu-column__icon-1 {
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+}
+.menu-column__icon-2 {
+  width: 18px;
+  height: 18px;
+  object-fit: cover;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  filter: var(--menu-column-icon-2-color);
+}
+.menu-column__content {
+  flex: 1;
+}
+.menu-column__heading {
+  margin-top: 6px;
+  color: var(--menu-column-heading-color);
+  font-weight: 500;
+  line-height: 150%;
+}
+.menu-column__list {
+  margin-top: 19px;
+}
+.menu-column__list li:last-child .menu-column__link {
+  padding-bottom: 0;
+}
+.menu-column__link {
+  display: block;
+  padding: 7px 0px;
+  color: var(--menu-column-item-color);
+  font-size: 1.4rem;
+  line-height: 142.857%;
+}
+.menu-column__link:hover {
+  color: #0071dc;
+  font-weight: 500;
 }
 
 /*# sourceMappingURL=main.css.map */
