@@ -1400,15 +1400,15 @@ html {
 
 /*Dropdown*/
 .dropdown {
+  display: none;
   position: absolute;
   left: 0;
   padding-top: 54px;
   width: min(1240px, 100%);
 }
 .dropdown__inner {
-  --inner-padding: 30px;
   position: relative;
-  padding: var(--inner-padding);
+  padding: 30px 30px 23px;
   border-radius: 20px;
   background: var(--dropdown-bg-color);
   box-shadow: 0px 40px 90px 20px var(--dropdown-shadow-color);
@@ -1425,11 +1425,13 @@ html {
 }
 
 .top-menu {
-  max-height: calc(min(582px, 100vh - 160px) - var(--inner-padding) * 2);
+  --main-menu-width: 292px;
+  position: relative;
+  height: calc(min(582px, 100vh - 154px) - 53px);
 }
 .top-menu__main {
-  width: 392px;
-  max-height: inherit;
+  width: var(--main-menu-width);
+  height: inherit;
   border-right: solid 1px var(--top-menu-main-border-color);
   overflow-y: auto;
 }
@@ -1437,6 +1439,9 @@ html {
 .menu-column {
   display: flex;
   gap: 14px;
+}
+.menu-column + .menu-column {
+  margin-top: 23px;
 }
 .menu-column__icon {
   position: relative;
@@ -1447,12 +1452,12 @@ html {
 .menu-column__icon-1 {
   width: 30px;
   height: 30px;
-  object-fit: cover;
+  object-fit: contain;
 }
 .menu-column__icon-2 {
   width: 18px;
   height: 18px;
-  object-fit: cover;
+  object-fit: contain;
   position: absolute;
   right: 0;
   bottom: 0;
@@ -1470,8 +1475,12 @@ html {
 .menu-column__list {
   margin-top: 19px;
 }
-.menu-column__list li:last-child .menu-column__link {
-  padding-bottom: 0;
+.menu-column__item--active .sub-menu {
+  display: flex;
+}
+.menu-column__item--active > .menu-column__link, .menu-column__item:hover > .menu-column__link {
+  color: #0071dc;
+  font-weight: 500;
 }
 .menu-column__link {
   display: block;
@@ -1480,9 +1489,15 @@ html {
   font-size: 1.4rem;
   line-height: 142.857%;
 }
-.menu-column__link:hover {
-  color: #0071dc;
-  font-weight: 500;
+
+.sub-menu {
+  position: absolute;
+  inset: 0 0 0 var(--main-menu-width);
+  display: none;
+  justify-content: space-between;
+  padding-left: 30px;
+  height: 100%;
+  overflow-y: auto;
 }
 
 /*# sourceMappingURL=main.css.map */

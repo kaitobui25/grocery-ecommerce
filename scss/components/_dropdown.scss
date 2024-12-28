@@ -1,14 +1,13 @@
 /*Dropdown*/
 .dropdown {
-    // display: none;
+    display: none;
     position: absolute;
     left: 0;
     padding-top: 54px;
     width: min(1240px, 100%);
     &__inner {
-        --inner-padding: 30px;
         position: relative;
-        padding: var(--inner-padding);
+        padding: 30px 30px 23px;
         border-radius: 20px;
         background: var(--dropdown-bg-color);
         box-shadow: 0px 40px 90px 20px var(--dropdown-shadow-color);
@@ -26,14 +25,17 @@
 }
 
 .top-menu {
+    --main-menu-width: 292px;
+    position: relative;
+
     // max-height thì khi mà phần tử trong inner ít thì inner thu gọn lại
     //thiết kế chiều cao la 582px, nhưng khi người dung thu nhỏ cửa sổ thì phần bên dưới sẽ kô nhìn thấy
-    //nên phải lấy 100vh - 160px. 160px là độ cao từ trên top xuống tới phần inner. xem file word
-    // vì đã padding trên dưới 30px nên phải trừ cho 60px thì mới ra chiều cao của top-menu
-    max-height: calc(min(582px, 100vh - 160px) - (var(--inner-padding) * 2));
+    //nên phải lấy 100vh - 154px. 154px là độ cao từ trên top xuống tới phần inner. xem file word
+    // vì đã padding trên 30px dưới 23px nên phải trừ cho 53px thì mới ra chiều cao của top-menu
+    height: calc(min(582px, 100vh - 154px) - 53px);
     &__main {
-        width: 392px;
-        max-height: inherit;
+        width: var(--main-menu-width);
+        height: inherit;
         border-right: solid 1px var(--top-menu-main-border-color);
 
         overflow-y: auto;
@@ -43,6 +45,10 @@
 .menu-column {
     display: flex;
     gap: 14px;
+
+    + .menu-column {
+        margin-top: 23px;
+    }
     &__icon {
         position: relative;
 
@@ -55,13 +61,14 @@
     &__icon-1 {
         width: 30px;
         height: 30px;
-        object-fit: cover;
+        //đặt object fit để khi người dùng có tải ảnh kích thước to sẽ ko bị vỡ giao diện
+        object-fit: contain;
     }
 
     &__icon-2 {
         width: 18px;
         height: 18px;
-        object-fit: cover;
+        object-fit: contain;
         position: absolute;
         right: 0;
         bottom: 0;
@@ -85,8 +92,15 @@
         margin-top: 19px;
     }
 
-    &__list li:last-child &__link {
-        padding-bottom: 0;
+    &__item--active {
+        .sub-menu {
+            display: flex;
+        }
+    }
+    &__item--active > &__link,
+    &__item:hover > &__link {
+        color: #0071dc;
+        font-weight: 500;
     }
 
     &__link {
@@ -95,10 +109,18 @@
         color: var(--menu-column-item-color);
         font-size: 1.4rem;
         line-height: 142.857%;
-
-        &:hover {
-            color: #0071dc;
-            font-weight: 500;
-        }
     }
+}
+
+.sub-menu {
+    position: absolute;
+    inset: 0 0 0 var(--main-menu-width);
+
+    display: none;
+    justify-content: space-between;
+
+    padding-left: 30px;
+    height: 100%;
+
+    overflow-y: auto;
 }

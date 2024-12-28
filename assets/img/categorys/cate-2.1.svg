@@ -1,0 +1,7 @@
+<!-- để tạm trong thư mục img vì muốn ám chỉ hình ảnh này sau này admin có thể thay đổi được
+      sau này xoá đi, rồi dùng js để set -->
+
+<svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="30" height="30" rx="5" fill="#7644E1"/>
+<rect width="30" height="30" rx="5" fill="white" fill-opacity="0.3"/>
+</svg>
