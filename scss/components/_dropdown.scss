@@ -94,7 +94,7 @@
 
     &__item--active {
         .sub-menu {
-            display: flex;
+            display: grid;
         }
     }
     &__item--active > &__link,
@@ -117,7 +117,8 @@
     inset: 0 0 0 var(--main-menu-width);
 
     display: none;
-    justify-content: space-between;
+    grid-template-columns: repeat(3,1fr);
+    gap: 60px;
 
     padding-left: 30px;
     height: 100%;

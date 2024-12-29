@@ -1476,7 +1476,7 @@ html {
   margin-top: 19px;
 }
 .menu-column__item--active .sub-menu {
-  display: flex;
+  display: grid;
 }
 .menu-column__item--active > .menu-column__link, .menu-column__item:hover > .menu-column__link {
   color: #0071dc;
@@ -1494,7 +1494,8 @@ html {
   position: absolute;
   inset: 0 0 0 var(--main-menu-width);
   display: none;
-  justify-content: space-between;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 60px;
   padding-left: 30px;
   height: 100%;
   overflow-y: auto;
