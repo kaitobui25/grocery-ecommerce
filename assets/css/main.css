@@ -1500,5 +1500,12 @@ html {
   height: 100%;
   overflow-y: auto;
 }
+.sub-menu--not-main {
+  position: initial;
+  inset: initial;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding-left: 0;
+}
 
 /*# sourceMappingURL=main.css.map */

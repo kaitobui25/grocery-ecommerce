@@ -52,7 +52,7 @@
     &__icon {
         position: relative;
 
-        //icon sẽ ko biị co lại khi mà nội dung text bên cạnh lớn lên
+        //icon sẽ ko bị co lại khi mà nội dung text bên cạnh lớn lên
         flex-shrink: 0;
         width: 36px;
         height: 36px;
@@ -92,11 +92,13 @@
         margin-top: 19px;
     }
 
+    
     &__item--active {
         .sub-menu {
             display: grid;
         }
     }
+
     &__item--active > &__link,
     &__item:hover > &__link {
         color: #0071dc;
@@ -124,4 +126,15 @@
     height: 100%;
 
     overflow-y: auto;
+
+    // Grocery và Beauty chỉ có sub menu 
+    &--not-main {
+        position: initial;
+        inset: initial;
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        padding-left: 0;
+    }
 }
+
+
