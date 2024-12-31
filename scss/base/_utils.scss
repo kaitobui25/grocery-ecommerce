@@ -1,0 +1,36 @@
+// tiện ích này giúp display block, none trở nên đơn giản hơn bằng cách thêm class vào html
+
+$breakpoints: (
+    // xs: 0,  bỏ đi vì làm desktop first
+    // Khi sử dụng max-width để xác định các breakpoint, việc sắp xếp từ lớn đến nhỏ đảm bảo rằng các quy tắc CSS cho các màn hình lớn hơn được áp dụng trước. Sau đó, các quy tắc cho màn hình nhỏ hơn sẽ ghi đè lên khi kích thước màn hình giảm xuống.
+    xxl: 1400px,
+    xl: 1200px,
+    lg: 992px,
+    md: 768px,
+    sm: 576px
+);
+
+$display-value: block, flex, grid, none;
+
+// dùng mixin vì để gọi hàm make display 2 lần, 1 lần ko có breakpoint, 1 lần thì có
+// cho breakpoint = null vì để khi ko truyền giá trị cho nó thì ko báo lỗi
+// sử dụng biên infix để dễ bảo trì, mở rộng hơn là if-else
+// !important để đảm bảo nó ưu tiên số 1, không bị ghi đè bởi các thuộc tính khác
+@mixin make-display($breakpoint: null) {
+    @each $display in $display-value {
+        $infix: if($breakpoint, "-#{$breakpoint}", "");
+        .d#{$infix}-#{$display} {
+            display: $display !important;
+        }
+    }
+}
+
+// tạo class d-block, d-none, d-flex khi ko có breakpoint 
+@include make-display();
+
+// tạo class d-block, d-none, d-flex khi có breakpoint 
+@each $breakpoint, $dimension in $breakpoints {
+    @media (max-width: ($dimension - 0.02)) {
+        @include make-display($breakpoint);
+    }
+}

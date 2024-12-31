@@ -10,10 +10,6 @@ html {
     --top-act-separate-bg-color: #ededf6;
     --body-color: #f6f6f6;
 
-    @include abstracts.breakpoint(lg) {
-        --header-bg-color: #fff;
-        --header-shadow-color:rgba(237, 237, 246, 0.20);
-    }
 
     // dropdown
     --dropdown-bg-color: #fff;
@@ -21,4 +17,8 @@ html {
     --top-menu-main-border-color: #d2d1d6;
     --menu-column-heading-color: #1a162e;
     --menu-column-item-color: #1a162e;
+    @include abstracts.breakpoint(lg) {
+        --header-bg-color: #fff;
+        --header-shadow-color:rgba(237, 237, 246, 0.20);
+    }
 }

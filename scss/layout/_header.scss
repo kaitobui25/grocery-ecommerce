@@ -23,12 +23,6 @@
     position: relative;
     @extend %flexItemCenter;
 
-    &-more {
-        display: none;
-        @include abstracts.breakpoint(lg) {
-            display: block;
-        }
-    }
 }
 
 .navbar {
@@ -116,27 +110,19 @@
 .top-act {
     @extend %flexItemCenter;
     margin-left: auto;
+    gap: 20px;
 
     @include abstracts.breakpoint(lg) {
         margin-left: 0;
     }
-    gap: 20px;
     &__group {
         @extend %flexItemCenter;
         border-radius: 8px;
         background: var(--top-act-group-bg-color);
         box-shadow: 0px 20px 60px 10px var(--top-act-group-shadow-color);
 
-        @include abstracts.breakpoint(sm) {
-            display: none;
-        }
     }
 
-    &__group--single {
-        @include abstracts.breakpoint(lg) {
-            display: none;
-        }
-    }
 
     &__group--single &__btn {
         padding: 13px;

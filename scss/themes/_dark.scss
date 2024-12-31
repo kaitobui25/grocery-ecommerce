@@ -11,9 +11,6 @@ html.dark {
     --top-act-separate-bg-color: #ededf6;
     --body-color: #292e39;
 
-    @include abstracts.breakpoint(lg) {
-        --header-shadow-color: rgba(0, 0, 0, 0.2);
-    }
     // dropdown
     --dropdown-bg-color: #2f3441;
     --dropdown-shadow-color: rgba(23, 28, 40, 0.4);
@@ -27,4 +24,7 @@ html.dark {
     --menu-column-icon-2-color: brightness(0) saturate(100%) invert(99%)
         sepia(4%) saturate(1164%) hue-rotate(180deg) brightness(92%)
         contrast(115%);
+        @include abstracts.breakpoint(lg) {
+            --header-shadow-color: rgba(0, 0, 0, 0.2);
+        }
 }
