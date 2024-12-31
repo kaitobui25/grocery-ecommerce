@@ -1,10 +1,16 @@
 /*Dropdown*/
+@use "../abstracts" ;
+
 .dropdown {
     display: none;
     position: absolute;
     left: 0;
     padding-top: 54px;
     width: min(1240px, 100%);
+
+    @include abstracts.breakpoint(lg) {
+        padding-top: 0;
+    }
     &__inner {
         position: relative;
         padding: 30px 30px 23px;
@@ -20,6 +26,9 @@
             display: inline-block;
             translate: -50%;
             filter: var(--dropdown-arrow-color);
+            @include abstracts.breakpoint(lg) {
+                display: none;;
+            }
         }
     }
 }
@@ -56,6 +65,10 @@
         flex-shrink: 0;
         width: 36px;
         height: 36px;
+
+        @include abstracts.breakpoint(lg) {
+            // display: none;
+        }
     }
 
     &__icon-1 {

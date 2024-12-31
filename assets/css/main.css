@@ -156,6 +156,8 @@ a {
   color: inherit;
 }
 
+img,
+a,
 button,
 textarea,
 select,
@@ -163,6 +165,7 @@ input {
   font-size: inherit;
   font-family: inherit;
   color: inherit;
+  -webkit-tap-highlight-color: transparent;
 }
 
 button {
@@ -1295,11 +1298,59 @@ html {
 
 @media (max-width: 991.98px) {
   .navbar {
-    display: none;
+    position: fixed;
+    inset: 0 50% 0 0;
+    padding: 30px;
+    background-color: orange;
+    z-index: 9;
+    translate: -100%;
+    transition: 0.5s ease;
+  }
+  .navbar.show {
+    translate: 0;
+  }
+  .navbar.show ~ .navbar__overlay {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+.navbar__overlay {
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.5s ease;
+}
+@media (max-width: 991.98px) {
+  .navbar__overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 8;
+    background: rgba(0, 0, 0, 0.4);
+  }
+}
+.navbar__close-btn {
+  display: none;
+}
+@media (max-width: 991.98px) {
+  .navbar__close-btn {
+    display: block;
+  }
+}
+@media (max-width: 991.98px) {
+  .navbar__list {
+    flex-direction: column;
+    align-items: start;
   }
 }
 .navbar__list-item:hover .dropdown {
   display: block;
+}
+@media (max-width: 991.98px) {
+  .navbar__list-item {
+    width: 100%;
+  }
+  .navbar__list-item:hover .dropdown {
+    display: none;
+  }
 }
 .navbar__link {
   display: flex;
@@ -1308,6 +1359,14 @@ html {
   font-size: 1.5rem;
   font-weight: 500;
   line-height: 146.667%;
+}
+@media (max-width: 991.98px) {
+  .navbar__link {
+    padding: 14px 0px;
+    font-size: 1.6rem;
+    line-height: 150%;
+    justify-content: space-between;
+  }
 }
 .navbar__arrow {
   padding-top: 4px;
@@ -1406,6 +1465,11 @@ html {
   padding-top: 54px;
   width: min(1240px, 100%);
 }
+@media (max-width: 991.98px) {
+  .dropdown {
+    padding-top: 0;
+  }
+}
 .dropdown__inner {
   position: relative;
   padding: 30px 30px 23px;
@@ -1422,6 +1486,11 @@ html {
   display: inline-block;
   translate: -50%;
   filter: var(--dropdown-arrow-color);
+}
+@media (max-width: 991.98px) {
+  .dropdown__inner::before {
+    display: none;
+  }
 }
 
 .top-menu {

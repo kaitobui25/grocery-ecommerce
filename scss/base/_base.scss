@@ -23,6 +23,8 @@ a {
     color: inherit;
 }
 
+img,
+a,
 button,
 textarea,
 select,
@@ -30,6 +32,7 @@ input {
     font-size: inherit;
     font-family: inherit;
     color: inherit;
+    -webkit-tap-highlight-color: transparent;
 }
 
 button {

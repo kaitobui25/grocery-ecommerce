@@ -33,16 +33,63 @@
 
 .navbar {
     @include abstracts.breakpoint(lg) {
-        display: none;
+        position: fixed;
+        inset: 0 50% 0 0;
+        padding: 30px;
+        background-color: orange;
+        z-index: 9;
+        // mặc định sẽ ẩn thanh navbar đi trên màn hình nhỏ
+        translate: -100%;
+        transition: 0.5s ease;
+        // chỗ nào có class js-toggle thì mỗi lần nhấn nút button thì chỗ đó sẽ có class show / hide luân phiên thay đổi
+        // chỗ nào có class show thì hiện navbar ra
+        &.show {
+            translate: 0;
+        }
+
+        &.show ~&__overlay {
+            visibility: visible;
+            opacity: 1;
+        }
     }
+
+    &__overlay {
+        // desktop is hidden, if use display none , cant use transition
+        visibility: hidden;
+        opacity: 0;
+        transition: 0.5s ease;
+        @include abstracts.breakpoint(lg) {
+            position: fixed;
+            inset: 0;
+            z-index: 8;
+            background: rgba($color: #000000, $alpha: 0.4);
+        }
+    }
+
+    &__close-btn {
+        display: none;
+        @include abstracts.breakpoint(lg) {
+            display: block;
+        }
+    }
+
     &__list {
         @extend %flexItemCenter;
+        @include abstracts.breakpoint(lg) {
+            flex-direction: column;
+            align-items: start;
+        }
     }
 
     &__list-item {
-
         &:hover .dropdown {
             display: block;
+        }
+        @include abstracts.breakpoint(lg) {
+            width: 100%;
+            &:hover .dropdown {
+                display: none;
+            }
         }
     }
 
@@ -53,7 +100,13 @@
         font-size: 1.5rem;
         font-weight: 500;
         line-height: 146.667%;
-        
+
+        @include abstracts.breakpoint(lg) {
+            padding: 14px 0px;
+            font-size: 1.6rem;
+            line-height: 150%; 
+            justify-content: space-between;
+        }
     }
     &__arrow {
         padding-top: 4px;
