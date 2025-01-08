@@ -1,5 +1,5 @@
 /*Dropdown*/
-@use "../abstracts" ;
+@use "../abstracts";
 
 .dropdown {
     display: none;
@@ -9,6 +9,8 @@
     width: min(1240px, 100%);
 
     @include abstracts.breakpoint(lg) {
+        display: block;
+        position: static;
         padding-top: 0;
     }
     &__inner {
@@ -18,6 +20,13 @@
         background: var(--dropdown-bg-color);
         box-shadow: 0px 40px 90px 20px var(--dropdown-shadow-color);
         color: var(--dropdown-text-color);
+
+        @include abstracts.breakpoint(lg) {
+            padding: 0 10px;
+            background: transparent;
+            border-radius: 0;
+            box-shadow: none;
+        }
         &::before {
             position: absolute;
             top: -14px;
@@ -27,7 +36,7 @@
             translate: -50%;
             filter: var(--dropdown-arrow-color);
             @include abstracts.breakpoint(lg) {
-                display: none;;
+                display: none;
             }
         }
     }
@@ -42,12 +51,23 @@
     //nên phải lấy 100vh - 154px. 154px là độ cao từ trên top xuống tới phần inner. xem file word
     // vì đã padding trên 30px dưới 23px nên phải trừ cho 53px thì mới ra chiều cao của top-menu
     height: calc(min(582px, 100vh - 154px) - 53px);
+
+    @include abstracts.breakpoint(lg) {
+        height: 100%;
+    }
+
     &__main {
         width: var(--main-menu-width);
         height: inherit;
         border-right: solid 1px var(--top-menu-main-border-color);
 
         overflow-y: auto;
+
+        @include abstracts.breakpoint(lg) {
+            width: 100%;
+            overflow-y: unset;
+            border-right: none;
+        }
     }
 }
 
@@ -98,14 +118,21 @@
         color: var(--menu-column-heading-color);
         font-weight: 500;
         line-height: 150%;
+
+        @include abstracts.breakpoint(lg) {
+            margin-bottom: 12px;
+        }
     }
 
     &__list {
         // margin top 26 nhung ma đã padding 7px rồi nên 26 - 7 = 19px
         margin-top: 19px;
+
+        @include abstracts.breakpoint(lg) {
+            margin-top: 0;
+        }
     }
 
-    
     &__item--active {
         .sub-menu {
             display: grid;
@@ -132,7 +159,7 @@
     inset: 0 0 0 var(--main-menu-width);
 
     display: none;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 60px;
 
     padding-left: 30px;
@@ -140,14 +167,22 @@
 
     overflow-y: auto;
 
-    // Grocery và Beauty chỉ có sub menu 
+    @include abstracts.breakpoint(lg) {
+        position: static;
+        padding-left: 0;
+        grid-template-columns: 1fr;
+        gap: 20px;
+        overflow-y: unset;
+    }
+    // Grocery và Beauty chỉ có sub menu
     &--not-main {
         position: initial;
         inset: initial;
         display: grid;
-        grid-template-columns: repeat(4,1fr);
+        grid-template-columns: repeat(4, 1fr);
         padding-left: 0;
+        @include abstracts.breakpoint(lg) {
+            grid-template-columns: 1fr;
+        }
     }
 }
-
-

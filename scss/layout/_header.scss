@@ -29,7 +29,7 @@
     @include abstracts.breakpoint(lg) {
         position: fixed;
         inset: 0 50% 0 0;
-        padding: 30px;
+        padding: 20px;
         background-color: orange;
         z-index: 9;
         // mặc định sẽ ẩn thanh navbar đi trên màn hình nhỏ
@@ -64,6 +64,7 @@
         display: none;
         @include abstracts.breakpoint(lg) {
             display: block;
+            padding: 10px;
         }
     }
 
@@ -72,6 +73,8 @@
         @include abstracts.breakpoint(lg) {
             flex-direction: column;
             align-items: start;
+            height: calc(100% - 20px);
+            overflow-y: auto;
         }
     }
 
@@ -81,9 +84,6 @@
         }
         @include abstracts.breakpoint(lg) {
             width: 100%;
-            &:hover .dropdown {
-                display: none;
-            }
         }
     }
 
@@ -96,7 +96,7 @@
         line-height: 146.667%;
 
         @include abstracts.breakpoint(lg) {
-            padding: 14px 0px;
+            padding: 14px 10px;
             font-size: 1.6rem;
             line-height: 150%; 
             justify-content: space-between;
