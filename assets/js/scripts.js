@@ -114,13 +114,22 @@ function handleActiveMenu() {
             if (!items.length) return;
 
             removeActive(menu);
-            items[0].classList.add(activeClass);
+            if (window.innerWidth > 991) items[0].classList.add(activeClass);
 
             Array.from(items).forEach((item) => {
+                //Khi chuột di vào phần tử
                 item.onmouseenter = () => {
-                    if (window.innerWidth <= 991) return;
-                    removeActive(menu);
-                    item.classList.add(activeClass);
+                    if (window.innerWidth <= 991) return; // Không thực hiện nếu màn hình nhỏ hơn hoặc bằng 991px
+                    removeActive(menu); // Xóa trạng thái active của các mục khác
+                    item.classList.add(activeClass); // Thêm trạng thái active cho mục này
+                };
+
+                //Khi nhấn vào phần tử
+                item.onclick = () => {
+                    if (window.innerWidth > 991) return; // Không thực hiện nếu màn hình lớn hơn 991px
+                    removeActive(menu); // Xóa trạng thái active của các mục khác
+                    item.classList.add(activeClass); // Thêm trạng thái active cho mục này
+                    item.scrollIntoView(); // Cuộn mục này vào vùng hiển thị
                 };
             });
         });
