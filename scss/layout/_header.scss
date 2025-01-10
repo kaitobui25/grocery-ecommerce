@@ -22,7 +22,6 @@
 .top-bar {
     position: relative;
     @extend %flexItemCenter;
-
 }
 
 .navbar {
@@ -41,7 +40,7 @@
             translate: 0;
         }
 
-        &.show ~&__overlay {
+        &.show ~ &__overlay {
             visibility: visible;
             opacity: 1;
         }
@@ -84,6 +83,15 @@
         }
         @include abstracts.breakpoint(lg) {
             width: 100%;
+            &:hover .dropdown {
+                display: none;
+            }
+        }
+    }
+
+    &__item {
+        &--active .dropdown {
+            display: block !important;
         }
     }
 
@@ -98,12 +106,18 @@
         @include abstracts.breakpoint(lg) {
             padding: 14px 10px;
             font-size: 1.6rem;
-            line-height: 150%; 
+            line-height: 150%;
             justify-content: space-between;
         }
     }
     &__arrow {
         padding-top: 4px;
+        rotate: -90deg;
+        transition: 0.3s ease;
+    }
+
+    &__item--active &__arrow {
+        rotate: 0deg;
     }
 }
 
@@ -120,9 +134,7 @@
         border-radius: 8px;
         background: var(--top-act-group-bg-color);
         box-shadow: 0px 20px 60px 10px var(--top-act-group-shadow-color);
-
     }
-
 
     &__group--single &__btn {
         padding: 13px;

@@ -1430,6 +1430,12 @@ html {
   .navbar__list-item {
     width: 100%;
   }
+  .navbar__list-item:hover .dropdown {
+    display: none;
+  }
+}
+.navbar__item--active .dropdown {
+  display: block !important;
 }
 .navbar__link {
   display: flex;
@@ -1449,6 +1455,11 @@ html {
 }
 .navbar__arrow {
   padding-top: 4px;
+  rotate: -90deg;
+  transition: 0.3s ease;
+}
+.navbar__item--active .navbar__arrow {
+  rotate: 0deg;
 }
 
 .top-act {
@@ -1536,7 +1547,6 @@ html {
 }
 @media (max-width: 991.98px) {
   .dropdown {
-    display: block;
     position: static;
     padding-top: 0;
   }

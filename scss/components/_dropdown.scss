@@ -9,7 +9,6 @@
     width: min(1240px, 100%);
 
     @include abstracts.breakpoint(lg) {
-        display: block;
         position: static;
         padding-top: 0;
     }
