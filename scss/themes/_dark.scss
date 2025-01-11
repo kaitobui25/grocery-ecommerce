@@ -26,5 +26,6 @@ html.dark {
         contrast(115%);
         @include abstracts.breakpoint(lg) {
             --header-shadow-color: rgba(0, 0, 0, 0.2);
+            --side-bar-bg-color: #292e39;
         }
 }

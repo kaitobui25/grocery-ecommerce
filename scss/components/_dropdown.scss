@@ -26,6 +26,9 @@
             border-radius: 0;
             box-shadow: none;
         }
+        @include abstracts.breakpoint(sm) {
+            padding-top: 3px;
+        }
         &::before {
             position: absolute;
             top: -14px;
@@ -132,8 +135,9 @@
         }
     }
 
-    &__item--active {
-        .sub-menu {
+    &__item {
+        // them &--active vao truoc submenu sau khi sua xong
+        &--active .sub-menu {
             display: grid;
         }
     }
@@ -172,6 +176,12 @@
         grid-template-columns: 1fr;
         gap: 20px;
         overflow-y: unset;
+    }
+
+    @include abstracts.breakpoint(sm) {
+        margin-top: 13px;
+        margin-bottom: 3px;
+        gap: 23px;
     }
     // Grocery và Beauty chỉ có sub menu
     &--not-main {
