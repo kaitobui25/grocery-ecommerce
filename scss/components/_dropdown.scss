@@ -2,7 +2,7 @@
 @use "../abstracts";
 
 .dropdown {
-    display: none;
+    display: block;
     position: absolute;
     left: 0;
     padding-top: 54px;
@@ -23,7 +23,7 @@
         @include abstracts.breakpoint(lg) {
             padding: 0 10px;
             background: transparent;
-            border-radius: 0;
+            order-radius: 0;
             box-shadow: none;
         }
         @include abstracts.breakpoint(sm) {
