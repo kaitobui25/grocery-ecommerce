@@ -1,27 +1,14 @@
 <!DOCTYPE html>
-<html lang="en" class="">
+<html lang="en" class="dark">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Grocery Ecommerce</title>
         <!-- favicon -->
-        <link
-            rel="icon"
-            type="image/png"
-            href="./assets/favicon/favicon-96x96.png"
-            sizes="96x96"
-        />
-        <link
-            rel="icon"
-            type="image/svg+xml"
-            href="./assets/favicon/favicon.svg"
-        />
+        <link rel="icon" type="image/png" href="./assets/favicon/favicon-96x96.png" sizes="96x96" />
+        <link rel="icon" type="image/svg+xml" href="./assets/favicon/favicon.svg" />
         <link rel="shortcut icon" href="./assets/favicon/favicon.ico" />
-        <link
-            rel="apple-touch-icon"
-            sizes="180x180"
-            href="./assets/favicon/apple-touch-icon.png"
-        />
+        <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon/apple-touch-icon.png" />
         <link rel="manifest" href="./assets/favicon/site.webmanifest" />
 
         <!-- Font -->
@@ -35,12 +22,47 @@
     </head>
     <body>
         <!-- Header -->
-
-        <!-- Body -->
         <header id="header" class="header"></header>
         <script>
             load("#header", "./templates/header.html");
         </script>
+        <!-- Body -->
+
+        <div class="container">
+            <div class="slideshow">
+                <div class="slideshow__inner">
+                    <div class="slideshow__item">
+                        <a href="#!" class="slideshow__link"> 
+                            <picture>
+                                <source media="(max-width: 575.98px)" srcset="./assets/img/slideshow/item-1-sm.png">
+                                <img src="./assets/img/slideshow/item-1.png" alt="" class="slideshow__img" />
+                            </picture>
+                        </a>
+                    </div>
+                    <div class="slideshow__item">
+                        <a href="#!" class="slideshow__link"> 
+                            <picture>
+                                <source media="(max-width: 575.98px)" srcset="./assets/img/slideshow/item-1-sm.png">
+                                <img src="./assets/img/slideshow/item-1.png" alt="" class="slideshow__img" />
+                            </picture>
+                        </a>
+                    </div>
+                    <div class="slideshow__item">
+                        <a href="#!" class="slideshow__link"> 
+                            <picture>
+                                <source media="(max-width: 575.98px)" srcset="./assets/img/slideshow/item-1-sm.png">
+                                <img src="./assets/img/slideshow/item-1.png" alt="" class="slideshow__img" />
+                            </picture>
+                        </a>
+                    </div>
+                    <div class="slideshow__page">
+                        <span class="slideshow__num">1</span>
+                        <span class="slideshow__slider"></span>
+                        <span class="slideshow__num">5</span>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <!-- Footer -->
     </body>

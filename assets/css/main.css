@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -1302,8 +1303,7 @@ button {
 /*dart mode*/
 html.dark {
   --text-color: #fff;
-  --icon-color: brightness(0) saturate(100%) invert(100%) sepia(0%)
-      saturate(5951%) hue-rotate(265deg) brightness(101%) contrast(102%);
+  --icon-color: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(5951%) hue-rotate(265deg) brightness(101%) contrast(102%);
   --header-bg-color: #171c28;
   --top-act-group-bg-color: #292e39;
   --top-act-group-shadow-color: rgba(0, 0, 0, 0.2);
@@ -1312,14 +1312,11 @@ html.dark {
   --dropdown-bg-color: #2f3441;
   --dropdown-shadow-color: rgba(23, 28, 40, 0.4);
   --dropdown-text-color: #b9babe;
-  --dropdown-arrow-color: brightness(0) saturate(100%) invert(16%) sepia(14%)
-      saturate(1087%) hue-rotate(186deg) brightness(91%) contrast(85%);
+  --dropdown-arrow-color: brightness(0) saturate(100%) invert(16%) sepia(14%) saturate(1087%) hue-rotate(186deg) brightness(91%) contrast(85%);
   --top-menu-main-border-color: #171c28;
   --menu-column-heading-color: #b9babe;
   --menu-column-item-color: #b9babe;
-  --menu-column-icon-2-color: brightness(0) saturate(100%) invert(99%)
-      sepia(4%) saturate(1164%) hue-rotate(180deg) brightness(92%)
-      contrast(115%);
+  --menu-column-icon-2-color: brightness(0) saturate(100%) invert(99%) sepia(4%) saturate(1164%) hue-rotate(180deg) brightness(92%) contrast(115%);
 }
 @media (max-width: 991.98px) {
   html.dark {
@@ -1330,8 +1327,7 @@ html.dark {
 
 html {
   --text-color: #1a162e;
-  --icon-color: brightness(0) saturate(100%) invert(8%) sepia(26%)
-      saturate(1657%) hue-rotate(212deg) brightness(89%) contrast(96%);
+  --icon-color: brightness(0) saturate(100%) invert(8%) sepia(26%) saturate(1657%) hue-rotate(212deg) brightness(89%) contrast(96%);
   --header-bg-color: #eee;
   --top-act-group-bg-color: #fff;
   --top-act-group-shadow-color: rgba(237, 237, 246, 0.2);
@@ -1346,7 +1342,7 @@ html {
 @media (max-width: 991.98px) {
   html {
     --header-bg-color: #fff;
-    --header-shadow-color:rgba(237, 237, 246, 0.20);
+    --header-shadow-color: rgba(237, 237, 246, 0.2);
     --side-bar-bg-color: #fff;
   }
 }
@@ -1375,6 +1371,7 @@ html {
 
 .top-bar {
   position: relative;
+  z-index: 9;
 }
 
 @media (max-width: 991.98px) {
@@ -1749,6 +1746,119 @@ html {
 @media (max-width: 991.98px) {
   .sub-menu--not-main {
     grid-template-columns: 1fr;
+  }
+}
+
+.slideshow {
+  --page-color: #fff;
+  margin-top: 40px;
+}
+@media (max-width: 575.98px) {
+  .slideshow {
+    margin-top: 30px;
+  }
+}
+.slideshow__inner {
+  position: relative;
+  display: flex;
+  /* Ẩn các phần tử vượt quá kích thước của phần tử cha */
+  overflow: hidden;
+}
+.slideshow__item {
+  position: relative;
+  /* Ngăn các phần tử flex không bị thu nhỏ lại */
+  flex-shrink: 0;
+  /* Mỗi mục chiếm 100% chiều rộng của phần tử cha */
+  width: 100%;
+  padding-top: 34%;
+}
+@media (max-width: 575.98px) {
+  .slideshow__item {
+    padding-top: 49.55%;
+  }
+}
+.slideshow__img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* Hình ảnh chiếm 100% chiều rộng của phần tử cha */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+}
+@media (max-width: 575.98px) {
+  .slideshow__img {
+    border-radius: 10px;
+  }
+}
+.slideshow__page {
+  position: absolute;
+  left: 5.22388%;
+  bottom: 14.5054%;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: 13.4%;
+}
+.slideshow__num {
+  color: var(--page-color);
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 144.444%; /* 144.444% */
+}
+@media (max-width: 575.98px) {
+  .slideshow__num {
+    border-radius: 10px;
+    font-size: 1.4rem;
+    line-height: 142.857%;
+  }
+}
+.slideshow__slider {
+  position: relative;
+  flex-shrink: 0;
+  width: 100%;
+  height: 4px;
+  background-color: var(--page-color);
+}
+@media (max-width: 575.98px) {
+  .slideshow__slider {
+    height: 3px;
+  }
+}
+.slideshow__slider::before, .slideshow__slider::after {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 14px;
+  height: 14px;
+  background-color: transparent;
+  border-radius: 50%;
+  border: 4px solid var(--page-color);
+}
+@media (max-width: 575.98px) {
+  .slideshow__slider::before, .slideshow__slider::after {
+    border-width: 3px;
+  }
+}
+.slideshow__slider::before {
+  top: 50%;
+  left: -3px;
+  translate: -50% -50%;
+}
+@media (max-width: 575.98px) {
+  .slideshow__slider::before {
+    left: -5px;
+  }
+}
+.slideshow__slider::after {
+  top: 50%;
+  right: -3px;
+  translate: 50% -50%;
+}
+@media (max-width: 575.98px) {
+  .slideshow__slider::after {
+    right: -5px;
   }
 }
 

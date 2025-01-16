@@ -1,0 +1,116 @@
+@use "../abstracts";
+
+.slideshow {
+    --page-color: #fff;
+    margin-top: 40px;
+    @include abstracts.breakpoint(sm) {
+        margin-top: 30px;
+    }
+
+    &__inner {
+        position: relative;
+        display: flex;
+        /* Ẩn các phần tử vượt quá kích thước của phần tử cha */
+        overflow: hidden;
+    }
+
+    &__item {
+        position: relative;
+        /* Ngăn các phần tử flex không bị thu nhỏ lại */
+        flex-shrink: 0;
+        /* Mỗi mục chiếm 100% chiều rộng của phần tử cha */
+        width: 100%;
+
+        // tạo khung cho ảnh 1340 /455 = 34%
+        padding-top: 34%;
+        @include abstracts.breakpoint(sm) {
+            // tạo khung cho ảnh 335 / 166 = 49.55%
+            padding-top: 49.55%;
+        }
+    }
+
+    &__img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        /* Hình ảnh chiếm 100% chiều rộng của phần tử cha */
+        width: 100%;
+        // height100 bức ảnh cao = chiều cao khung
+        height: 100%;
+        object-fit: cover;
+        border-radius: 20px;
+        @include abstracts.breakpoint(sm) {
+            border-radius: 10px;
+        }
+    }
+
+    &__page {
+        position: absolute;
+        left: 5.22388%;
+        bottom: 14.5054%;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        
+        //width:  13.4%  kết hợp với width 100% của slider :  để khi thay đổi kích thước màn hình thì độ dài slider cũng thay đổi theo
+        width: 13.4%;
+    }
+
+    &__num {
+        color: var(--page-color);
+        font-size: 1.8rem;
+        font-weight: 500;
+        line-height: 144.444%; /* 144.444% */
+
+        @include abstracts.breakpoint(sm) {
+            border-radius: 10px;
+            font-size: 1.4rem;
+            line-height: 142.857%;
+        }
+    }
+
+    &__slider {
+        position: relative;
+        flex-shrink: 0;
+
+        //width: 100% để khi thay đổi kích thước màn hình thì độ dài slider cũng thay đổi theo
+        width: 100%;
+        height: 4px;
+        background-color: var(--page-color);
+
+        @include abstracts.breakpoint(sm) {
+            height: 3px;
+        }
+        &::before,
+        &::after {
+            position: absolute;
+            content: "";
+            display: block;
+            width: 14px;
+            height: 14px;
+            background-color: transparent;
+            border-radius: 50%;
+            border: 4px solid var(--page-color);
+
+            @include abstracts.breakpoint(sm) {
+                border-width: 3px;
+            }
+        }
+        &::before {
+            top: 50%;
+            left: -3px;
+            translate: -50% -50%;
+            @include abstracts.breakpoint(sm) {
+                left: -5px;
+            }
+        }
+        &::after {
+            top: 50%;
+            right: -3px;
+            translate: 50% -50%;
+            @include abstracts.breakpoint(sm) {
+                right: -5px;
+            }
+        }
+    }
+}
