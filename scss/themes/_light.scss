@@ -15,7 +15,7 @@ html {
     --top-menu-main-border-color: #d2d1d6;
     --menu-column-heading-color: #1a162e;
     --menu-column-item-color: #1a162e;
-    @include abstracts.breakpoint(lg) {
+    @include abstracts.screen(lg) {
         --header-bg-color: #fff;
         --header-shadow-color: rgba(237, 237, 246, 0.2);
         --side-bar-bg-color: #fff;

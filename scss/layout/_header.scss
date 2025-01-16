@@ -9,12 +9,12 @@
     background-color: var(--header-bg-color);
     padding: 30px 0px;
 
-    @include abstracts.breakpoint(lg) {
+    @include abstracts.screen(lg) {
         padding: 22px 0px;
         box-shadow: 0px 20px 60px 10px var(--header-shadow-color);
     }
 
-    @include abstracts.breakpoint(sm) {
+    @include abstracts.screen(sm) {
         padding: 16px 0px;
     }
 }
@@ -26,7 +26,7 @@
 }
 
 .navbar {
-    @include abstracts.breakpoint(lg) {
+    @include abstracts.screen(lg) {
         position: fixed;
         inset: 0 50% 0 0;
         padding: 20px 30px;
@@ -49,7 +49,7 @@
         }
     }
 
-    @include abstracts.breakpoint(sm) {
+    @include abstracts.screen(sm) {
         inset: 0 20% 0 0;
         padding: 10px;
     }
@@ -59,7 +59,7 @@
         visibility: hidden;
         opacity: 0;
         transition: 0.5s ease;
-        @include abstracts.breakpoint(lg) {
+        @include abstracts.screen(lg) {
             position: fixed;
             inset: 0;
             z-index: 8;
@@ -69,7 +69,7 @@
 
     &__close-btn {
         display: none;
-        @include abstracts.breakpoint(lg) {
+        @include abstracts.screen(lg) {
             display: block;
             padding: 10px;
         }
@@ -77,7 +77,7 @@
 
     &__list {
         @extend %flexItemCenter;
-        @include abstracts.breakpoint(lg) {
+        @include abstracts.screen(lg) {
             flex-direction: column;
             align-items: flex-start;
             height: calc(100% - 28px);
@@ -85,7 +85,7 @@
             overscroll-behavior: contain;
         }
 
-        @include abstracts.breakpoint(sm) {
+        @include abstracts.screen(sm) {
             // thêm BUY và Favorite vào thì phải giảm chiều cao lại
             height: calc(100% - 115px);
         }
@@ -95,7 +95,7 @@
         &:hover .dropdown {
             display: block;
         }
-        @include abstracts.breakpoint(lg) {
+        @include abstracts.screen(lg) {
             width: 100%;
             &:hover .dropdown {
                 display: none;
@@ -117,13 +117,13 @@
         font-weight: 500;
         line-height: 146.667%;
 
-        @include abstracts.breakpoint(lg) {
+        @include abstracts.screen(lg) {
             padding: 14px 10px;
             font-size: 1.6rem;
             line-height: 150%;
             justify-content: space-between;
         }
-        @include abstracts.breakpoint(sm) {
+        @include abstracts.screen(sm) {
             padding-top: 10px;
             padding-bottom: 10px;
         }
@@ -163,7 +163,7 @@
     margin-left: auto;
     gap: 20px;
 
-    @include abstracts.breakpoint(lg) {
+    @include abstracts.screen(lg) {
         margin-left: 0;
     }
     &__group {
@@ -172,7 +172,7 @@
         background: var(--top-act-group-bg-color);
         box-shadow: 0px 20px 60px 10px var(--top-act-group-shadow-color);
 
-        @include abstracts.breakpoint(sm) {
+        @include abstracts.screen(sm) {
         }
     }
 

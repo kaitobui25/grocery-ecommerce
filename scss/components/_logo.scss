@@ -10,18 +10,18 @@
     gap: 14px;
 
     // when the screen <1200px navbar is too close search icon => reduce margin right
-    @include abstracts.breakpoint(xl) {
+    @include abstracts.screen(xl) {
         margin-right: 1.7462%;
     }
-    
-    @include abstracts.breakpoint(lg) {
+
+    @include abstracts.screen(lg) {
         margin-left: auto;
         margin-right: auto;
         gap: 10px;
     }
 
     &__svg {
-        @include abstracts.breakpoint(lg) {
+        @include abstracts.screen(lg) {
             width: 24px;
         }
     }
@@ -29,7 +29,7 @@
         font-size: 2.2rem;
         font-weight: 700;
         line-height: 145.455%;
-        @include abstracts.breakpoint(lg) {
+        @include abstracts.screen(lg) {
             font-size: 1.8rem;
             line-height: 144.444%;
         }

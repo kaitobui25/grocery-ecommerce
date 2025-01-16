@@ -3,7 +3,7 @@
 .slideshow {
     --page-color: #fff;
     margin-top: 40px;
-    @include abstracts.breakpoint(sm) {
+    @include abstracts.screen(sm) {
         margin-top: 30px;
     }
 
@@ -23,7 +23,7 @@
 
         // tạo khung cho ảnh 1340 /455 = 34%
         padding-top: 34%;
-        @include abstracts.breakpoint(sm) {
+        @include abstracts.screen(sm) {
             // tạo khung cho ảnh 335 / 166 = 49.55%
             padding-top: 49.55%;
         }
@@ -39,7 +39,7 @@
         height: 100%;
         object-fit: cover;
         border-radius: 20px;
-        @include abstracts.breakpoint(sm) {
+        @include abstracts.screen(sm) {
             border-radius: 10px;
         }
     }
@@ -51,7 +51,7 @@
         display: flex;
         align-items: center;
         gap: 20px;
-        
+
         //width:  13.4%  kết hợp với width 100% của slider :  để khi thay đổi kích thước màn hình thì độ dài slider cũng thay đổi theo
         width: 13.4%;
     }
@@ -62,7 +62,7 @@
         font-weight: 500;
         line-height: 144.444%; /* 144.444% */
 
-        @include abstracts.breakpoint(sm) {
+        @include abstracts.screen(sm) {
             border-radius: 10px;
             font-size: 1.4rem;
             line-height: 142.857%;
@@ -78,7 +78,7 @@
         height: 4px;
         background-color: var(--page-color);
 
-        @include abstracts.breakpoint(sm) {
+        @include abstracts.screen(sm) {
             height: 3px;
         }
         &::before,
@@ -92,7 +92,7 @@
             border-radius: 50%;
             border: 4px solid var(--page-color);
 
-            @include abstracts.breakpoint(sm) {
+            @include abstracts.screen(sm) {
                 border-width: 3px;
             }
         }
@@ -100,7 +100,7 @@
             top: 50%;
             left: -3px;
             translate: -50% -50%;
-            @include abstracts.breakpoint(sm) {
+            @include abstracts.screen(sm) {
                 left: -5px;
             }
         }
@@ -108,7 +108,7 @@
             top: 50%;
             right: -3px;
             translate: 50% -50%;
-            @include abstracts.breakpoint(sm) {
+            @include abstracts.screen(sm) {
                 right: -5px;
             }
         }
