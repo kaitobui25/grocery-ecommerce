@@ -1,0 +1,71 @@
+@use "../abstracts";
+
+.cate-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    padding: 20px 26px 20px 20px;
+    border-radius: 16px;
+    height: 100%;
+    background-color: var(--cate-item-bg-color);
+
+    @include abstracts.screen(xl) {
+        flex-direction: column;
+    }
+
+    @include abstracts.screen(md) {
+        flex-direction: row;
+    }
+
+    &__thumb {
+        display: block;
+        width: 116px;
+        height: 116px;
+        // object-fit: contain để cho ảnh nằm trọn trong khung, object fit cover thì ảnh sẽ bị cắt
+        object-fit: contain;
+        border-radius: 8px;
+        background-color: var(--cate-item-thumb-bg-color);
+
+        @include abstracts.screen(xl) {
+            width: 100%;
+            height: 150px;
+        }
+
+        @include abstracts.screen(md) {
+            width: 88px;
+            height: 88px;
+        }
+    }
+
+    &__info {
+        padding-right: 30px;
+
+        @include abstracts.screen(xxl) {
+            padding-right: 0px;
+        }
+    }
+
+    &__title {
+        margin-bottom: 6px;
+        color: var(--text-color);
+        font-size: 2.2rem;
+        font-weight: 700;
+        line-height: 145.455%;
+
+        @include abstracts.screen(md) {
+            font-size: 1.8rem;
+        }
+    }
+
+    &__desc {
+        color: var(--cate-item-desc-color);
+        font-size: 1.6rem;
+        line-height: 150%;
+    }
+
+    @include abstracts.screen(md) {
+        font-size: 1.4rem;
+        line-height: 142.857%;
+    }
+}

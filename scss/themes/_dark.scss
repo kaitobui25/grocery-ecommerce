@@ -20,8 +20,15 @@ html.dark {
     --menu-column-heading-color: #b9babe;
     --menu-column-item-color: #b9babe;
     --menu-column-icon-2-color: brightness(0) saturate(100%) invert(99%) sepia(4%) saturate(1164%) hue-rotate(180deg) brightness(92%) contrast(115%);
+    
+    // cate-item
+    --cate-item-bg-color: #171C28;
+    --cate-item-thumb-bg-color: #292E39;
+    --cate-item-desc-color: #fff;
+    
     @include abstracts.screen(lg) {
         --header-shadow-color: rgba(0, 0, 0, 0.2);
         --side-bar-bg-color: #292e39;
     }
+
 }

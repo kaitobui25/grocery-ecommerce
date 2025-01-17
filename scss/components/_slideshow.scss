@@ -2,10 +2,6 @@
 
 .slideshow {
     --page-color: #fff;
-    margin-top: 40px;
-    @include abstracts.screen(sm) {
-        margin-top: 30px;
-    }
 
     &__inner {
         position: relative;
