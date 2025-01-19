@@ -15,18 +15,27 @@ html {
     --top-menu-main-border-color: #d2d1d6;
     --menu-column-heading-color: #1a162e;
     --menu-column-item-color: #1a162e;
-    
+
     // cate-item
     --cate-item-bg-color: #eee;
     --cate-item-thumb-bg-color: #fff;
-    --cate-item-desc-color: #1A162E;
-    
+    --cate-item-desc-color: #1a162e;
+
+    //product-card
+    --filter-btn-bg: #fff;
+    --filter-btn-color: #6c6c72;
+    --product-card-bg: #fff;
+    --product-card-shadow: rgba(237, 237, 246, 0.2);
+    --product-card-title-color: #1a162e;
+    --product-card-price-color: #1a162e;
+
+
     @include abstracts.screen(lg) {
         --header-bg-color: #fff;
         --header-shadow-color: rgba(237, 237, 246, 0.2);
         --side-bar-bg-color: #fff;
     }
-        
+
     @include abstracts.screen(md) {
         --cate-item-bg-color: #fff;
     }

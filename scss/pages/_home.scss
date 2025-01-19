@@ -1,5 +1,11 @@
 @use "../abstracts";
 
+.container {
+    @include abstracts.screen(sm) {
+        --grid-gutter-x: 40px;
+    }
+}
+
 .home {
     &__container {
         margin-top: 40px;
@@ -9,7 +15,6 @@
     }
 
     &__heading {
-        margin-bottom: 20px;
         color: var(--text-color);
         font-size: 2.4rem;
         font-weight: 700;
@@ -18,19 +23,32 @@
 
     &__cate {
         --grid-gutter-x: 51px;
-        
-    @include abstracts.screen(xl) {
-        --grid-gutter-x: 30px;
-    }
-    
-    @include abstracts.screen(lg) {
-        --grid-gutter-x: 15px;
+
+        @include abstracts.screen(xl) {
+            --grid-gutter-x: 30px;
+        }
+
+        @include abstracts.screen(lg) {
+            --grid-gutter-x: 15px;
+        }
+
+        @include abstracts.screen(md) {
+            --grid-gutter-y: 20px;
+        }
     }
 
-    @include abstracts.screen(md) {
-        --grid-gutter-y: 20px;
+    &__row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 20px;
     }
 
+    &__product {
+        align-items: center;
     }
-    
 }
+
+
+
+

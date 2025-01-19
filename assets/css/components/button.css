@@ -1,0 +1,18 @@
+.filter-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 12px;
+  border-radius: 6px;
+  background-color: var(--filter-btn-bg);
+  color: var(--filter-btn-text);
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 142.857%;
+}
+.filter-btn__icon {
+  margin-left: 14px;
+  width: 16px;
+  height: 14.4px;
+}
+
+/*# sourceMappingURL=button.css.map */
