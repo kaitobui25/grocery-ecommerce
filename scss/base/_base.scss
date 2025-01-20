@@ -5,8 +5,6 @@
     box-sizing: border-box;
 }
 
-
-
 html {
     font-size: 62.5%;
 }
@@ -32,6 +30,7 @@ input {
     font-size: inherit;
     font-family: inherit;
     color: inherit;
+    outline: none;
     -webkit-tap-highlight-color: transparent;
 }
 

@@ -29,6 +29,10 @@ html {
     --product-card-title-color: #1a162e;
     --product-card-price-color: #1a162e;
 
+    //filter
+    --filter-text-color: #1a162e;
+    --filter-shadow: rgba(200, 200, 200, 0.4);
+    --slider-bg: #fff;
 
     @include abstracts.screen(lg) {
         --header-bg-color: #fff;

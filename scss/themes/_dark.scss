@@ -34,6 +34,11 @@ html.dark {
     --product-card-title-color: #fff;
     --product-card-price-color: #fff;
 
+    //filter
+    --filter-text-color: #fff;
+    --filter-shadow:rgba(0, 0, 0, 0.40);
+    --slider-bg: #292E39;
+
     @include abstracts.screen(lg) {
         --header-shadow-color: rgba(0, 0, 0, 0.2);
         --side-bar-bg-color: #292e39;
