@@ -30,9 +30,11 @@ html {
     --product-card-price-color: #1a162e;
 
     //filter
+    --filter-bg:#fff;
     --filter-text-color: #1a162e;
     --filter-shadow: rgba(200, 200, 200, 0.4);
     --slider-bg: #fff;
+    --filter-form-tag-bg: #F8F8FB;
 
     @include abstracts.screen(lg) {
         --header-bg-color: #fff;
