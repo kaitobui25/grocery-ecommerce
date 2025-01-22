@@ -2174,6 +2174,32 @@ html {
 .filter__form-tag:hover {
   color: var(--filter-text-color);
 }
+.filter__form-search-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 334px;
+  padding: 10px 16px;
+  border-radius: 6px;
+  border: 1px solid #d2d1d6;
+}
+.filter__form-search {
+  width: 90%;
+  border: none;
+  outline: none;
+  color: var(--filter-text-color);
+  background-color: transparent;
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 146.667%;
+}
+.filter__form-search::placeholder {
+  color: #9e9da8;
+  font-weight: 400;
+}
+.filter__form-search-icon {
+  width: 24px;
+}
 .filter__row {
   display: flex;
   gap: 30px;

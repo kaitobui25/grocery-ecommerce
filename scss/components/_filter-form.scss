@@ -116,7 +116,6 @@
 
             color: var(--filter-text-color);
 
-            
             cursor: pointer;
         }
 
@@ -151,6 +150,38 @@
             &:hover {
                 color: var(--filter-text-color);
             }
+        }
+
+        &-search-wrap {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            width: 334px;
+            padding: 10px 16px;
+
+            border-radius: 6px;
+            border: 1px solid #d2d1d6;
+        }
+
+        &-search {
+            width: 90%;
+            border: none;
+            outline: none;
+            color: var(--filter-text-color);
+            background-color: transparent;
+            font-size: 1.5rem;
+            font-weight: 500;
+            line-height: 146.667%;
+
+            &::placeholder {
+                color: #9e9da8;
+                font-weight: 400;
+            }
+        }
+
+        &-search-icon {
+            width: 24px;
         }
     }
     // End form
