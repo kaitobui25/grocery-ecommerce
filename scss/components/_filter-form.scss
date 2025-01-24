@@ -5,13 +5,20 @@
 
 .filter {
     position: absolute;
-    top: 40px;
+    top: 50px;
     right: 0;
     padding: 31px 30px;
     border-radius: 20px;
     background-color: var(--filter-bg);
     // background-color: violet;
     box-shadow: 0px 40px 90px var(--filter-shadow);
+
+    &__arrow {
+        position: absolute;
+        top: -17px;
+        right: 22px;
+        filter: var(--filter-arrow-color)
+    }
 
     &__heading,
     &__form-label,
@@ -184,6 +191,7 @@
             width: 24px;
         }
     }
+
     // End form
 
     &__row {
@@ -195,5 +203,29 @@
         width: 1px;
         height: 162px;
         background-color: #eee;
+    }
+
+    &__footer {
+        justify-content: flex-end;
+        gap: 10px;
+        margin-top: 18px;
+
+        & .btn {
+            margin: 0;
+        }
+    }
+
+    &__cancel,
+    &__submit {
+        padding: 0px 10px;
+        height: 38px;
+    }
+
+    &__cancel {
+        font-size: 1.5rem;
+    }
+
+    &__submit {
+        font-size: 1.4rem;
     }
 }

@@ -1332,6 +1332,7 @@ html.dark {
   --product-card-title-color: #fff;
   --product-card-price-color: #fff;
   --filter-bg:#292E39;
+  --filter-arrow-color: brightness(0) saturate(100%) invert(13%) sepia(8%) saturate(1918%) hue-rotate(183deg) brightness(95%) contrast(86%);
   --filter-text-color: #fff;
   --filter-shadow:rgba(0, 0, 0, 0.40);
   --slider-bg: #292E39;
@@ -1367,6 +1368,7 @@ html {
   --product-card-title-color: #1a162e;
   --product-card-price-color: #1a162e;
   --filter-bg:#fff;
+  --filter-arrow-color: brightness(0) saturate(100%) invert(100%) sepia(4%) saturate(0%) hue-rotate(287deg) brightness(105%) contrast(103%);
   --filter-text-color: #1a162e;
   --filter-shadow: rgba(200, 200, 200, 0.4);
   --slider-bg: #fff;
@@ -1998,6 +2000,43 @@ html {
   display: none;
 }
 
+.btn {
+  height: 42px;
+  padding: 0 20px;
+  border-radius: 6px;
+  color: var(--filter-text-color);
+  background-color: #f8f8fb;
+  font-size: 1.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  user-select: none;
+}
+.btn + .btn {
+  margin-left: 20px;
+}
+.btn--text {
+  color: #9e9da8;
+  background-color: transparent;
+  font-weight: 400;
+}
+.btn--primary {
+  background-color: #ffb700;
+}
+.btn--outline {
+  border: 1px solid #d2d1d6;
+  background: transparent;
+}
+.btn--rounded {
+  border-radius: 99px;
+}
+.btn[disabled], .btn--disable {
+  opacity: 0.4;
+  pointer-events: none;
+}
+.btn:hover {
+  opacity: 0.9;
+}
+
 .product-card {
   display: flex;
   flex-direction: column;
@@ -2062,12 +2101,18 @@ html {
 
 .filter {
   position: absolute;
-  top: 40px;
+  top: 50px;
   right: 0;
   padding: 31px 30px;
   border-radius: 20px;
   background-color: var(--filter-bg);
   box-shadow: 0px 40px 90px var(--filter-shadow);
+}
+.filter__arrow {
+  position: absolute;
+  top: -17px;
+  right: 22px;
+  filter: var(--filter-arrow-color);
 }
 .filter__heading, .filter__form-label, .filter__form-input {
   color: var(--filter-text-color);
@@ -2208,6 +2253,24 @@ html {
   width: 1px;
   height: 162px;
   background-color: #eee;
+}
+.filter__footer {
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 18px;
+}
+.filter__footer .btn {
+  margin: 0;
+}
+.filter__cancel, .filter__submit {
+  padding: 0px 10px;
+  height: 38px;
+}
+.filter__cancel {
+  font-size: 1.5rem;
+}
+.filter__submit {
+  font-size: 1.4rem;
 }
 
 @media (max-width: 575.98px) {
