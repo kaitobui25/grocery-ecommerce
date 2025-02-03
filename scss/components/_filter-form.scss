@@ -1,3 +1,5 @@
+@use "../abstracts";
+
 .filter-wrap {
     position: relative;
     z-index: 8;
@@ -13,11 +15,32 @@
     // background-color: violet;
     box-shadow: 0px 40px 90px var(--filter-shadow);
 
+    transition: 0.2s;
+
+    @include abstracts.screen(xl) {
+        height: calc(100vh - 60px);
+        overflow-y: auto;
+        overscroll-behavior: contain;
+
+        padding-bottom: 0;
+    }
+
+    @include abstracts.screen(sm) {
+        padding: 32px 20px 0px;
+        width: 85vw;
+    }
+
+    &.hide {
+        opacity: 0;
+        visibility: hidden;
+    }
+
     &__arrow {
         position: absolute;
         top: -17px;
         right: 22px;
-        filter: var(--filter-arrow-color)
+        // filter: var(--filter-arrow-color);
+        filter: brightness(0) saturate(100%) invert(0%) sepia(100%) saturate(7500%) hue-rotate(59deg) brightness(93%) contrast(93%);
     }
 
     &__heading,
@@ -142,6 +165,10 @@
             display: flex;
             flex-wrap: wrap;
             gap: 10px 20px;
+
+            @include abstracts.screen(sm) {
+                column-gap: 9px;
+            }
         }
 
         &-tag {
@@ -164,7 +191,7 @@
             align-items: center;
             justify-content: space-between;
 
-            width: 334px;
+            max-width: 334px;
             padding: 10px 16px;
 
             border-radius: 6px;
@@ -199,16 +226,36 @@
         gap: 30px;
     }
 
+    &__body {
+        @include abstracts.screen(xl) {
+            flex-direction: column;
+            gap: 20px;
+        }
+    }
+
     &__separate {
         width: 1px;
         height: 162px;
         background-color: #eee;
+        @include abstracts.screen(xl) {
+            width: 100%;
+            height: 1px;
+        }
     }
 
     &__footer {
         justify-content: flex-end;
         gap: 10px;
         margin-top: 18px;
+
+        // cố định nút submit cuối thanh cuộn
+        @include abstracts.screen(xl) {
+            position: sticky;
+            bottom: 0;
+            right: 0;
+            padding: 16px 0px;
+            background: var(--filter-bg);
+        }
 
         & .btn {
             margin: 0;
@@ -219,6 +266,10 @@
     &__submit {
         padding: 0px 10px;
         height: 38px;
+
+        @include abstracts.screen(sm) {
+            flex: 1;
+        }
     }
 
     &__cancel {
