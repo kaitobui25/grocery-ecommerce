@@ -2,7 +2,7 @@
 
 .filter-wrap {
     position: relative;
-    z-index: 8;
+    z-index: 10;
 }
 
 .filter {
@@ -17,17 +17,14 @@
 
     transition: 0.2s;
 
-    @include abstracts.screen(xl) {
-        height: calc(100vh - 60px);
-        overflow-y: auto;
-        overscroll-behavior: contain;
-
-        padding-bottom: 0;
-    }
-
     @include abstracts.screen(sm) {
-        padding: 32px 20px 0px;
-        width: 85vw;
+        position: fixed;
+        inset: 0;
+        width: 100vw;
+        height: 100vh;
+        border-radius: 0;
+        padding: 32px 20px 21px;
+        // width: 85vw;
     }
 
     &.hide {
@@ -39,8 +36,7 @@
         position: absolute;
         top: -17px;
         right: 22px;
-        // filter: var(--filter-arrow-color);
-        filter: brightness(0) saturate(100%) invert(0%) sepia(100%) saturate(7500%) hue-rotate(59deg) brightness(93%) contrast(93%);
+        filter: var(--filter-arrow-color);
     }
 
     &__heading,
@@ -120,6 +116,10 @@
             max-width: 121px;
             border-radius: 6px;
             border: 1px solid #d2d1d6;
+
+            @include abstracts.screen(sm) {
+                font-size: 1.6rem;
+            }
         }
 
         &-select-wrap {
@@ -131,6 +131,10 @@
 
             border-radius: 6px;
             border: 1px solid #d2d1d6;
+
+            @include abstracts.screen(sm) {
+                width: 60vw;
+            }
         }
 
         &-select,
@@ -142,11 +146,16 @@
 
         &-select {
             display: flex;
-            gap: var(--gap, 65px);
-
             color: var(--filter-text-color);
-
             cursor: pointer;
+        }
+
+        &-select-value {
+            gap: 65px;
+        }
+
+        &-select-unit {
+            gap: 17px;
         }
 
         &-select-arrow {
@@ -166,7 +175,7 @@
             flex-wrap: wrap;
             gap: 10px 20px;
 
-            @include abstracts.screen(sm) {
+            @include abstracts.screen(xl) {
                 column-gap: 9px;
             }
         }
@@ -191,11 +200,15 @@
             align-items: center;
             justify-content: space-between;
 
-            max-width: 334px;
+            width: 334px;
             padding: 10px 16px;
 
             border-radius: 6px;
             border: 1px solid #d2d1d6;
+
+            @include abstracts.screen(xl) {
+                width: 100%;
+            }
         }
 
         &-search {
@@ -207,6 +220,10 @@
             font-size: 1.5rem;
             font-weight: 500;
             line-height: 146.667%;
+
+            @include abstracts.screen(sm) {
+                font-size: 1.6rem;
+            }
 
             &::placeholder {
                 color: #9e9da8;
@@ -230,6 +247,10 @@
         @include abstracts.screen(xl) {
             flex-direction: column;
             gap: 20px;
+            height: calc(100vh - 280px);
+            overflow-y: auto;
+            padding-right: 12px;
+            overscroll-behavior: contain;
         }
     }
 
@@ -249,11 +270,11 @@
         margin-top: 18px;
 
         // cố định nút submit cuối thanh cuộn
-        @include abstracts.screen(xl) {
+
+        @include abstracts.screen(sm) {
             position: sticky;
             bottom: 0;
-            right: 0;
-            padding: 16px 0px;
+            padding: 10px 0;
             background: var(--filter-bg);
         }
 
@@ -269,6 +290,7 @@
 
         @include abstracts.screen(sm) {
             flex: 1;
+            height: 48px;
         }
     }
 
