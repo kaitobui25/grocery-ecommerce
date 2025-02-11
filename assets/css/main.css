@@ -1814,6 +1814,8 @@ html {
 }
 
 .btn {
+  display: flex;
+  align-items: center;
   height: 42px;
   padding: 0 20px;
   border-radius: 6px;
@@ -2348,6 +2350,14 @@ html {
   border-radius: 8px;
   box-shadow: 0px 4px 14px 2px rgba(0, 0, 0, 0.08);
   cursor: pointer;
+}
+.top-act__sign {
+  display: flex;
+}
+.top-act__link {
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 146.667%;
 }
 
 .footer {
