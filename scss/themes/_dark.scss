@@ -41,6 +41,9 @@ html.dark {
     --filter-shadow:rgba(0, 0, 0, 0.40);
     --slider-bg: #292E39;
     --filter-form-tag-bg: #171C28;
+    
+    // footer
+    --footer-bg-color : #0f0f0f;
 
     @include abstracts.screen(lg) {
         --header-shadow-color: rgba(0, 0, 0, 0.2);
