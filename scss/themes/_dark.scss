@@ -43,7 +43,7 @@ html.dark {
     --filter-form-tag-bg: #171C28;
     
     // footer
-    --footer-bg-color : #0f0f0f;
+    --footer-bg-color : #1a1d1a;
 
     @include abstracts.screen(lg) {
         --header-shadow-color: rgba(0, 0, 0, 0.2);

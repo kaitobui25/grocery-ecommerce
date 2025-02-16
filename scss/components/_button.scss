@@ -42,6 +42,7 @@
 .btn {
     display: flex;
     align-items: center;
+    justify-content: center;
     height: 42px;
 
     padding: 0 20px;
@@ -56,7 +57,9 @@
     user-select: none;
 
     & + .btn {
-        margin-left: 20px;
+        &:not(.btn--no-margin) {
+            margin-left: 20px;
+        }
     }
 
     &--text {

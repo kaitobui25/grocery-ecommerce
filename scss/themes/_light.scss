@@ -30,15 +30,21 @@ html {
     --product-card-price-color: #1a162e;
 
     //filter
-    --filter-bg:#fff;
+    --filter-bg: #fff;
     --filter-arrow-color: brightness(0) saturate(100%) invert(100%) sepia(4%) saturate(0%) hue-rotate(287deg) brightness(105%) contrast(103%);
     --filter-text-color: #1a162e;
     --filter-shadow: rgba(200, 200, 200, 0.4);
     --slider-bg: #fff;
-    --filter-form-tag-bg: #F8F8FB;
+    --filter-form-tag-bg: #f8f8fb;
 
     // footer
-    --footer-bg-color : #eef2e9;
+    --footer-bg-color: #eef2e9;
+
+    //sign-up
+    --sign-up-bg: #fafafd;
+    --sign-up-text-color: #1a162e;
+    --sign-up-content-bg: #fff;
+    --sign-up-input-color: #d2d1d6;
 
     @include abstracts.screen(lg) {
         --header-bg-color: #fff;
