@@ -25,22 +25,32 @@
             <section class="auth">
                 <!-- Media -->
                 <div class="auth__media">
-                    <img src="./assets/img/sign/sign-up.jpg" alt="Sign up" class="auth__img" />
+                    <!-- Logo -->
+                    <a href="./" class="logo auth__logo-media d-none d-md-flex">
+                        <img src="./assets/icons/logo.svg" alt="" class="logo__svg" />
+                        <h1 class="logo__title">grocerymart</h1>
+                    </a>
+                    <!-- Info -->
+                    <img src="./assets/img/auth/sign-up.jpg" alt="Sign up" class="auth__img" />
                     <span class="auth__media-desc">The best of luxury brand values, high quality products, and innovative services</span>
+                    <!-- Footer -->
+
+                    <button class="auth__arrow-right d-none d-md-flex js-toggle" toggle-target="#auth__content">
+                        <img src="./assets/img/auth/arrow-right-png.png" alt="" class="auth__arrow" />
+                    </button>
                 </div>
                 <!-- Content -->
-                <div class="auth__content">
+                <div id="auth__content" class="auth__content hide" >
                     <div class="auth__wrapper">
                         <!-- Logo -->
-                        <a href="./" class="logo auth__logo">
+                        <a href="./" class="logo auth__logo-content">
                             <img src="./assets/icons/logo.svg" alt="" class="logo__svg" />
                             <h1 class="logo__title">grocerymart</h1>
                         </a>
                         <!-- Main -->
-
                         <h1 class="auth__heading">Sign Up</h1>
                         <span class="auth__desc">Let's create your account and Shop like a pro and save money.</span>
-                        <form action="#" class="auth__form">
+                        <form action="./index-logined.html" class="auth__form">
                             <div class="auth__form-group">
                                 <input type="email" id="email" class="auth__input" placeholder="Email" />
                                 <img src="./assets/icons/email.svg" alt="" class="auth__icon" />
@@ -53,7 +63,7 @@
                                 <input type="password" id="confirm-password" class="auth__input" placeholder="Confirm-password" />
                                 <img src="./assets/icons/lock.svg" alt="" class="auth__icon" />
                             </div>
-                            <div class="form__group--inline auth__row">
+                            <div class="auth__row">
                                 <div class="auth__check">
                                     <input type="checkbox" id="auth__check-box" class="auth__check-box" />
                                     <label for="auth__check-box" class="auth__check-label">Set as default card</label>
@@ -61,10 +71,10 @@
                                 <a href="#!" class="auth__recovery">Recovery Password</a>
                             </div>
 
-                           <div class="auth__btn-group">
+                            <div class="auth__btn-group">
                                 <button class="auth__confirm btn btn--primary">Sign up</button>
                                 <button class="auth__google btn btn--outline btn--no-margin"><span>G</span>Sign in with Gmail</button>
-                           </div>
+                            </div>
                         </form>
                         <div class="auth__footer">
                             <span class="auth__footer-desc">Already have an account?</span>
@@ -74,5 +84,8 @@
                 </div>
             </section>
         </main>
+        <script>
+            window.dispatchEvent(new Event("template-loaded"));
+        </script>
     </body>
 </html>
