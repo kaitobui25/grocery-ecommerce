@@ -10,6 +10,8 @@
     font-weight: 500;
 
     text-align: center;
+    
+    user-select: none;
 
     &__media,
     &__content {
@@ -81,12 +83,17 @@
 
     &__wrapper {
         max-width: 460px;
-        width: 100%;
+        width: 100%;    
         margin: 0 auto;
     }
 
     &__form {
         margin-top: 50px;
+
+        &:has(:invalid) .auth__confirm {
+            opacity: 0.3;
+            pointer-events: none;
+        }
     }
 
     &__heading {
@@ -105,14 +112,8 @@
 
     &__form-group {
         position: relative;
-        & #email {
-            margin-bottom: 30px;
-        }
 
-        & #password,
-        #confirm-password {
-            margin-bottom: 20px;
-        }
+        margin-bottom: 30px;
     }
 
     &__input {
@@ -126,13 +127,23 @@
 
         border-radius: 10px;
         border: 1px solid var(--sign-up-input-color);
-        transition: border-color 0.3s;
+        transition: border-color 0.3s background-color 0.3s;
         &::placeholder {
             color: var(--sign-up-input-color);
         }
 
         &:focus-within {
             border-color: #77dae6;
+        }
+
+        &:not(:placeholder-shown):invalid ~ .auth__error {
+            opacity: 1;
+            visibility: inherit;
+        }
+
+        &:not(:placeholder-shown):invalid {
+            border-color: red;
+            background-color: rgba($color: red, $alpha: 0.1);
         }
     }
 
@@ -145,6 +156,17 @@
 
     &__input#email ~ &__icon {
         right: 12px;
+    }
+
+    &__error {
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s, visibility 0.3s;
+        position: absolute;
+        left: 8px;
+        bottom: -16px;
+        font-size: 1.4rem;
+        color: red;
     }
 
     &__row {
@@ -162,6 +184,7 @@
         font-size: 1.5rem;
         line-height: 146.667%;
         color: var(--sign-up-input-color);
+        user-select: none;
     }
 
     &__check-box {
@@ -175,8 +198,8 @@
         cursor: pointer;
 
         &:checked {
-            background-color: #0071dc;
-            border: 2px solid #0071dc;
+            background-color: #ffb700;
+            border: 2px solid #ffb700;
         }
 
         &:checked ~ .sign-up__check-label {

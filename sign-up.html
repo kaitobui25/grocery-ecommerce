@@ -40,7 +40,7 @@
                     </button>
                 </div>
                 <!-- Content -->
-                <div id="auth__content" class="auth__content hide" >
+                <div id="auth__content" class="auth__content hide">
                     <div class="auth__wrapper">
                         <!-- Logo -->
                         <a href="./" class="logo auth__logo-content">
@@ -52,16 +52,26 @@
                         <span class="auth__desc">Let's create your account and Shop like a pro and save money.</span>
                         <form action="./index-logined.html" class="auth__form">
                             <div class="auth__form-group">
-                                <input type="email" id="email" class="auth__input" placeholder="Email" />
+                                <input type="email" id="email" class="auth__input" placeholder="Email" required />
                                 <img src="./assets/icons/email.svg" alt="" class="auth__icon" />
+                                <span class="auth__error">Please enter a valid email address </span>
                             </div>
                             <div class="auth__form-group">
-                                <input type="password" id="password" class="auth__input" placeholder="Password" />
+                                <input type="password" id="password" class="auth__input" placeholder="Password" required minlength="6" />
                                 <img src="./assets/icons/lock.svg" alt="" class="auth__icon" />
+                                <span class="auth__error">Password must be at least 6 characters</span>
                             </div>
                             <div class="auth__form-group">
-                                <input type="password" id="confirm-password" class="auth__input" placeholder="Confirm-password" />
+                                <input
+                                    type="password"
+                                    id="confirm-password"
+                                    class="auth__input"
+                                    placeholder="Confirm-password"
+                                    required
+                                    minlength="6"
+                                />
                                 <img src="./assets/icons/lock.svg" alt="" class="auth__icon" />
+                                <span class="auth__error">Password do not match</span>
                             </div>
                             <div class="auth__row">
                                 <div class="auth__check">
