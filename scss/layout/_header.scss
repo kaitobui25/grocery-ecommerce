@@ -23,6 +23,31 @@
     position: relative;
     @extend %flexItemCenter;
     z-index: 9;
+
+    &__logo {
+        @include abstracts.screen(xl) {
+            margin-right: 1.7462%;
+        }
+
+        @include abstracts.screen(lg) {
+            margin-left: auto;
+            margin-right: auto;
+            gap: 10px;
+        }
+    }
+
+    &__svg {
+        @include abstracts.screen(lg) {
+            width: 24px;
+        }
+    }
+
+    &__title {
+        @include abstracts.screen(lg) {
+            font-size: 1.8rem;
+            line-height: 144.444%;
+        }
+    }
 }
 
 .navbar {
@@ -214,8 +239,8 @@
         font-weight: 500;
         line-height: 146.667%;
 
-        @include abstracts.screen (md) {
-            padding : 0 12px;
+        @include abstracts.screen(md) {
+            padding: 0 12px;
             margin-left: 0 !important;
         }
     }

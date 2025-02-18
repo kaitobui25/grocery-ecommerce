@@ -2,15 +2,17 @@
 
 .auth {
     display: flex;
+    min-height: 100vh;
 
-    height: 100vh;
-
+    @supports (-webkit-touch-callout: none) {
+        min-height: -webkit-fill-available;
+    }
+    // padding-bottom: env(safe-area-inset-bottom, 20px);
     color: var(--sign-up-text-color, #1a162e);
-    background-color: var(--sign-up-bg);
     font-weight: 500;
 
     text-align: center;
-    
+
     user-select: none;
 
     &__media,
@@ -24,10 +26,15 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
+
+        background-color: var(--sign-up-media-bg);
+
+        @include abstracts.screen(md) {
+            justify-content: space-between;
+        }
     }
 
-    &__img,
-    &__media-desc {
+    &__media-info {
         max-width: 422px;
 
         @include abstracts.screen(lg) {
@@ -37,6 +44,7 @@
 
     &__img {
         display: block;
+        margin-bottom: 50px;
         width: 100%;
         height: auto;
         object-fit: cover;
@@ -50,6 +58,14 @@
         @include abstracts.screen(md) {
             margin-bottom: 200px;
             font-size: 1.5rem;
+        }
+    }
+    &__arrow-right {
+        @include abstracts.screen(md) {
+            @supports (-webkit-touch-callout: none) {
+                margin-bottom: 20px;
+            }
+            margin-bottom: 70px;
         }
     }
 
@@ -74,16 +90,30 @@
 
     &__logo-media {
         margin-bottom: 151px;
+
+        @include abstracts.screen(md) {
+            margin-top: 80px;
+            margin-bottom: 0;
+        }
     }
 
     &__logo-content {
         justify-content: center;
-        margin-bottom: 50px;
+        margin-top: 50px;
+        @include abstracts.screen(md) {
+            margin-top: 50px;
+        }
     }
 
     &__wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+
         max-width: 460px;
-        width: 100%;    
+        width: 100%;
+        min-height: 100vh;
         margin: 0 auto;
     }
 
@@ -94,12 +124,20 @@
             opacity: 0.3;
             pointer-events: none;
         }
+
+        @include abstracts.screen(md) {
+            margin-top: 30px;
+        }
     }
 
     &__heading {
         margin-bottom: 10px;
         font-size: 3rem;
         line-height: 146.667%;
+
+        @include abstracts.screen(md) {
+            font-size: 2.2rem;
+        }
     }
 
     &__desc {
@@ -108,12 +146,21 @@
         color: #9e9da8;
         font-size: 1.5rem;
         line-height: 146.667%;
+
+        @include abstracts.screen(md) {
+            font-size: 1.4rem;
+        }
     }
 
     &__form-group {
         position: relative;
+        & ~ & {
+            margin-top: 30px;
 
-        margin-bottom: 30px;
+            @include abstracts.screen(md) {
+                margin-top: 20px;
+            }
+        }
     }
 
     &__input {
@@ -145,6 +192,11 @@
             border-color: red;
             background-color: rgba($color: red, $alpha: 0.1);
         }
+
+        @include abstracts.screen(md) {
+            height: 48px;
+            font-size: 1.6rem;
+        }
     }
 
     &__icon {
@@ -167,6 +219,10 @@
         bottom: -16px;
         font-size: 1.4rem;
         color: red;
+
+        @include abstracts.screen(md) {
+            font-size: 1.3rem;
+        }
     }
 
     &__row {
@@ -174,14 +230,20 @@
         justify-content: space-between;
         align-items: center;
         width: 100%;
+        margin-top: 20px;
         margin-bottom: 50px;
+        font-size: 1.5rem;
+
+        @include abstracts.screen(md) {
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+        }
     }
 
     &__check {
         display: flex;
         align-items: center;
         gap: 10px;
-        font-size: 1.5rem;
         line-height: 146.667%;
         color: var(--sign-up-input-color);
         user-select: none;
@@ -221,7 +283,6 @@
 
     &__recovery {
         color: #0071dc;
-        font-size: 1.5rem;
         line-height: 146.667%;
     }
 
@@ -229,6 +290,10 @@
         margin-bottom: 30px;
         width: 100%;
         height: 50px;
+
+        @include abstracts.screen(md) {
+            margin-bottom: 20px;
+        }
     }
 
     &__google {
@@ -236,9 +301,12 @@
         align-items: center;
         gap: 10px;
 
-        margin-bottom: 108px;
         width: 100%;
         height: 52px;
+
+        @include abstracts.screen(md) {
+            margin-bottom: 0;
+        }
     }
 
     &__footer {
@@ -246,6 +314,14 @@
         align-items: center;
         justify-content: center;
         gap: 10px;
+
+        margin-bottom: 52px;
+        font-size: 1.8rem;
+
+        @include abstracts.screen(md) {
+            margin-bottom: 50px;
+            font-size: 1.6rem;
+        }
 
         &-desc {
             font-weight: 400;

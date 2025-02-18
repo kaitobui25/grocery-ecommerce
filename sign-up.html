@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="">
     <head>
         <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
         <title>Sign in | Grocery Ecommerce</title>
         <!-- favicon -->
         <link rel="icon" type="image/png" href="./assets/favicon/favicon-96x96.png" sizes="96x96" />
@@ -31,12 +31,14 @@
                         <h1 class="logo__title">grocerymart</h1>
                     </a>
                     <!-- Info -->
-                    <img src="./assets/img/auth/sign-up.jpg" alt="Sign up" class="auth__img" />
-                    <span class="auth__media-desc">The best of luxury brand values, high quality products, and innovative services</span>
+                    <div class="auth__media-info">
+                        <img src="./assets/img/auth/sign-up.jpg" alt="Sign up" class="auth__img" />
+                        <span class="auth__media-desc">The best of luxury brand values, high quality products, and innovative services</span>
+                    </div>
                     <!-- Footer -->
 
                     <button class="auth__arrow-right d-none d-md-flex js-toggle" toggle-target="#auth__content">
-                        <img src="./assets/img/auth/arrow-right-png.png" alt="" class="auth__arrow" />
+                        <img src="./assets/img/auth/arrow-next.svg" alt="" class="auth__arrow" />
                     </button>
                 </div>
                 <!-- Content -->
@@ -48,44 +50,46 @@
                             <h1 class="logo__title">grocerymart</h1>
                         </a>
                         <!-- Main -->
-                        <h1 class="auth__heading">Sign Up</h1>
-                        <span class="auth__desc">Let's create your account and Shop like a pro and save money.</span>
-                        <form action="./index-logined.html" class="auth__form">
-                            <div class="auth__form-group">
-                                <input type="email" id="email" class="auth__input" placeholder="Email" required />
-                                <img src="./assets/icons/email.svg" alt="" class="auth__icon" />
-                                <span class="auth__error">Please enter a valid email address </span>
-                            </div>
-                            <div class="auth__form-group">
-                                <input type="password" id="password" class="auth__input" placeholder="Password" required minlength="6" />
-                                <img src="./assets/icons/lock.svg" alt="" class="auth__icon" />
-                                <span class="auth__error">Password must be at least 6 characters</span>
-                            </div>
-                            <div class="auth__form-group">
-                                <input
-                                    type="password"
-                                    id="confirm-password"
-                                    class="auth__input"
-                                    placeholder="Confirm-password"
-                                    required
-                                    minlength="6"
-                                />
-                                <img src="./assets/icons/lock.svg" alt="" class="auth__icon" />
-                                <span class="auth__error">Password do not match</span>
-                            </div>
-                            <div class="auth__row">
-                                <div class="auth__check">
-                                    <input type="checkbox" id="auth__check-box" class="auth__check-box" />
-                                    <label for="auth__check-box" class="auth__check-label">Set as default card</label>
+                       <div>
+                            <h1 class="auth__heading">Sign Up</h1>
+                            <span class="auth__desc">Let's create your account and Shop like a pro and save money.</span>
+                            <form action="./index-logined.html" class="auth__form">
+                                <div class="auth__form-group">
+                                    <input type="email" id="email" class="auth__input" placeholder="Email" required />
+                                    <img src="./assets/icons/email.svg" alt="" class="auth__icon" />
+                                    <span class="auth__error">Please enter a valid email address </span>
                                 </div>
-                                <a href="#!" class="auth__recovery">Recovery Password</a>
-                            </div>
-
-                            <div class="auth__btn-group">
-                                <button class="auth__confirm btn btn--primary">Sign up</button>
-                                <button class="auth__google btn btn--outline btn--no-margin"><span>G</span>Sign in with Gmail</button>
-                            </div>
-                        </form>
+                                <div class="auth__form-group">
+                                    <input type="password" id="password" class="auth__input" placeholder="Password" required minlength="6" />
+                                    <img src="./assets/icons/lock.svg" alt="" class="auth__icon" />
+                                    <span class="auth__error">Password must be at least 6 characters</span>
+                                </div>
+                                <div class="auth__form-group">
+                                    <input
+                                        type="password"
+                                        id="confirm-password"
+                                        class="auth__input"
+                                        placeholder="Confirm-password"
+                                        required
+                                        minlength="6"
+                                    />
+                                    <img src="./assets/icons/lock.svg" alt="" class="auth__icon" />
+                                    <span class="auth__error">Password do not match</span>
+                                </div>
+                                <div class="auth__row">
+                                    <div class="auth__check">
+                                        <input type="checkbox" id="auth__check-box" class="auth__check-box" />
+                                        <label for="auth__check-box" class="auth__check-label">Set as default card</label>
+                                    </div>
+                                    <a href="#!" class="auth__recovery">Recovery Password</a>
+                                </div>
+    
+                                <div class="auth__btn-group">
+                                    <button class="auth__confirm btn btn--primary">Sign up</button>
+                                    <button class="auth__google btn btn--outline btn--no-margin"><span>G</span>Sign in with Gmail</button>
+                                </div>
+                            </form>
+                       </div>
                         <div class="auth__footer">
                             <span class="auth__footer-desc">Already have an account?</span>
                             <a href="./sign-in.html" class="auth__footer-link">Sign in</a>
