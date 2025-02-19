@@ -45,6 +45,13 @@ html.dark {
     // footer
     --footer-bg-color : #1a1d1a;
 
+    
+    //auth
+    --auth-media-bg: #171C28;
+    --auth-text-color: #B9BABE;
+    --auth-content-bg: #292E39;
+    --auth-input-color: #B9BABE;
+
     @include abstracts.screen(lg) {
         --header-shadow-color: rgba(0, 0, 0, 0.2);
         --side-bar-bg-color: #292e39;

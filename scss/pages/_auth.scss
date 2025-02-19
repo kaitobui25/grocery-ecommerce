@@ -8,7 +8,7 @@
         min-height: -webkit-fill-available;
     }
     // padding-bottom: env(safe-area-inset-bottom, 20px);
-    color: var(--sign-up-text-color, #1a162e);
+    color: var(--auth-text-color, #1a162e);
     font-weight: 500;
 
     text-align: center;
@@ -27,7 +27,7 @@
         align-items: center;
         justify-content: center;
 
-        background-color: var(--sign-up-media-bg);
+        background-color: var(--auth-media-bg);
 
         @include abstracts.screen(md) {
             justify-content: space-between;
@@ -72,7 +72,7 @@
     &__content {
         display: flex;
         align-items: center;
-        background-color: var(--sign-up-content-bg);
+        background-color: var(--auth-content-bg);
 
         @include abstracts.screen(md) {
             position: fixed;
@@ -110,6 +110,7 @@
         flex-direction: column;
         align-items: center;
         justify-content: space-between;
+        gap: 20px;
 
         max-width: 460px;
         width: 100%;
@@ -171,12 +172,16 @@
 
         font-size: 1.8rem;
         line-height: 144.444%;
-
         border-radius: 10px;
-        border: 1px solid var(--sign-up-input-color);
+
+        border: 1px solid var(--auth-input-color);
+        background-color: transparent !important;
+
         transition: border-color 0.3s background-color 0.3s;
+
+
         &::placeholder {
-            color: var(--sign-up-input-color);
+            color: var(--auth-input-color);
         }
 
         &:focus-within {

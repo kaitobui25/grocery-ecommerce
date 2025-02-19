@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
     <head>
         <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
         <title>Sign in | Grocery Ecommerce</title>
         <!-- favicon -->
         <link rel="icon" type="image/png" href="./assets/favicon/favicon-96x96.png" sizes="96x96" />
@@ -21,6 +21,65 @@
         <script src="./assets/js/scripts.js"></script>
     </head>
     <body>
-        <h1>Sign in</h1>
+        <main>
+            <section class="auth">
+                <!-- Media -->
+                <div class="auth__media d-md-none">
+                    <!-- Info -->
+                    <div class="auth__media-info">
+                        <img src="./assets/img/auth/sign-in.jpg" alt="Sign up" class="auth__img" />
+                        <span class="auth__media-desc">The best of luxury brand values, high quality products, and innovative services</span>
+                    </div>
+                </div>
+                <!-- Content -->
+                <div class="auth__content">
+                    <div class="auth__wrapper">
+                        <!-- Logo -->
+                        <a href="./" class="logo auth__logo-content">
+                            <img src="./assets/icons/logo.svg" alt="" class="logo__svg" />
+                            <h1 class="logo__title">grocerymart</h1>
+                        </a>
+                        <!-- Main -->
+                        <div>
+                            <h1 class="auth__heading">Hello Again!</h1>
+                            <span class="auth__desc">
+                                Welcome back to sign in. As a returning customer, you have access to your previously saved all information.</span
+                            >
+                            <form action="./index-logined.html" class="auth__form">
+                                <div class="auth__form-group">
+                                    <input type="email" id="email" class="auth__input" placeholder="Email" value="admin@grocerymart.com" required />
+                                    <img src="./assets/icons/email.svg" alt="" class="auth__icon" />
+                                    <span class="auth__error">Please enter a valid email address </span>
+                                </div>
+                                <div class="auth__form-group">
+                                    <input type="password" id="password" class="auth__input" placeholder="Password" value="11111111" required minlength="6" />
+                                    <img src="./assets/icons/lock.svg" alt="" class="auth__icon" />
+                                    <span class="auth__error">Password must be at least 6 characters</span>
+                                </div>
+                                <div class="auth__row">
+                                    <div class="auth__check">
+                                        <input type="checkbox" id="auth__check-box" class="auth__check-box" />
+                                        <label for="auth__check-box" class="auth__check-label">Set as default card</label>
+                                    </div>
+                                    <a href="#!" class="auth__recovery">Recovery Password</a>
+                                </div>
+
+                                <div class="auth__btn-group">
+                                    <button class="auth__confirm btn btn--primary">Login</button>
+                                    <button class="auth__google btn btn--outline btn--no-margin"><span>G</span>Sign in with Gmail</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="auth__footer">
+                            <span class="auth__footer-desc">Don’t have an account yet?</span>
+                            <a href="./sign-up.html" class="auth__footer-link">Sign up</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <script>
+            window.dispatchEvent(new Event("template-loaded"));
+        </script>
     </body>
 </html>

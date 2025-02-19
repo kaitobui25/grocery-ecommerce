@@ -41,10 +41,10 @@ html {
     --footer-bg-color: #eef2e9;
 
     //sign-up
-    --sign-up-media-bg: #fafafd;
-    --sign-up-text-color: #1a162e;
-    --sign-up-content-bg: #fff;
-    --sign-up-input-color: #d2d1d6;
+    --auth-media-bg: #fafafd;
+    --auth-text-color: #1a162e;
+    --auth-content-bg: #fff;
+    --auth-input-color: #d2d1d6;
 
     @include abstracts.screen(lg) {
         --header-bg-color: #fff;
@@ -54,6 +54,6 @@ html {
 
     @include abstracts.screen(md) {
         --cate-item-bg-color: #fff;
-        --sign-up-media-bg: #fff;
+        --auth-media-bg: #fff;
     }
 }

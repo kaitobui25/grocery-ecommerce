@@ -34,6 +34,12 @@ input {
     -webkit-tap-highlight-color: transparent;
 }
 
+//avoid chrome change bg color of input
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+    transition: background-color 0s 600000s, color 0s 600000s !important;
+}
+
 button {
     border: none;
     background: transparent;
