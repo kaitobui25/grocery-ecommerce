@@ -111,11 +111,16 @@
         align-items: center;
         justify-content: space-between;
         gap: 20px;
+        flex: 1;
 
         max-width: 460px;
         width: 100%;
         min-height: 100vh;
         margin: 0 auto;
+    }
+
+    &__main-content {
+        width: 100%;
     }
 
     &__form {
@@ -155,6 +160,7 @@
 
     &__form-group {
         position: relative;
+
         & ~ & {
             margin-top: 30px;
 
@@ -162,6 +168,10 @@
                 margin-top: 20px;
             }
         }
+    }
+
+    &__message {
+        margin-bottom: 15px;
     }
 
     &__input {
@@ -179,7 +189,6 @@
 
         transition: border-color 0.3s background-color 0.3s;
 
-
         &::placeholder {
             color: var(--auth-input-color);
         }
@@ -194,8 +203,8 @@
         }
 
         &:not(:placeholder-shown):invalid {
-            border-color: red;
-            background-color: rgba($color: red, $alpha: 0.1);
+            border-color: #ed4337;
+            background-color: rgba($color: #ed4337, $alpha: 0.1);
         }
 
         @include abstracts.screen(md) {
@@ -223,7 +232,7 @@
         left: 8px;
         bottom: -16px;
         font-size: 1.4rem;
-        color: red;
+        color: #ed4337;
 
         @include abstracts.screen(md) {
             font-size: 1.3rem;
@@ -236,12 +245,12 @@
         align-items: center;
         width: 100%;
         margin-top: 20px;
-        margin-bottom: 50px;
+        // margin-bottom: 50px;
         font-size: 1.5rem;
 
         @include abstracts.screen(md) {
             font-size: 1.4rem;
-            margin-bottom: 20px;
+            // margin-bottom: 20px;
         }
     }
 
@@ -250,7 +259,7 @@
         align-items: center;
         gap: 10px;
         line-height: 146.667%;
-        color: var(--sign-up-input-color);
+        color: var(--auth-input-color);
         user-select: none;
     }
 
@@ -258,7 +267,7 @@
         position: relative;
         width: 20px;
         height: 20px;
-        border: 2px solid var(--sign-up-input-color);
+        border: 2px solid var(--auth-input-color);
         border-radius: 6px;
         appearance: none; // Loại bỏ kiểu mặc định của checkbox
         -webkit-appearance: none;
@@ -269,8 +278,8 @@
             border: 2px solid #ffb700;
         }
 
-        &:checked ~ .sign-up__check-label {
-            color: var(--sign-up-text-color);
+        &:checked ~ .auth__check-label {
+            color: var(--auth-text-color);
         }
 
         &:checked::before {
@@ -289,6 +298,14 @@
     &__recovery {
         color: #0071dc;
         line-height: 146.667%;
+    }
+
+    &__btn-group {
+        margin-top: 50px;
+
+        @include abstracts.screen(md) {
+            margin-top: 20px;
+        }
     }
 
     &__confirm {

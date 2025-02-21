@@ -1343,10 +1343,11 @@ html.dark {
   --slider-bg: #292E39;
   --filter-form-tag-bg: #171C28;
   --footer-bg-color: #1a1d1a;
-  --sign-up-media-bg: #171C28;
-  --sign-up-text-color: #B9BABE;
-  --sign-up-content-bg: #292E39;
-  --sign-up-input-color: #B9BABE;
+  --auth-media-bg: #171C28;
+  --auth-text-color: #B9BABE;
+  --auth-content-bg: #292E39;
+  --auth-input-color: #B9BABE;
+  --message-color: #1a162e;
 }
 @media (max-width: 991.98px) {
   html.dark {
@@ -1384,10 +1385,11 @@ html {
   --slider-bg: #fff;
   --filter-form-tag-bg: #f8f8fb;
   --footer-bg-color: #eef2e9;
-  --sign-up-media-bg: #fafafd;
-  --sign-up-text-color: #1a162e;
-  --sign-up-content-bg: #fff;
-  --sign-up-input-color: #d2d1d6;
+  --auth-media-bg: #fafafd;
+  --auth-text-color: #1a162e;
+  --auth-content-bg: #fff;
+  --auth-input-color: #d2d1d6;
+  --message-color: #1a162e;
 }
 @media (max-width: 991.98px) {
   html {
@@ -1399,7 +1401,7 @@ html {
 @media (max-width: 767.98px) {
   html {
     --cate-item-bg-color: #fff;
-    --sign-up-media-bg: #fff;
+    --auth-media-bg: #fff;
   }
 }
 
@@ -2155,6 +2157,17 @@ html {
   font-size: 1.4rem;
 }
 
+.message {
+  padding: 10px;
+  color: var(--message-color);
+  font-weight: normal;
+  border-radius: 5px;
+}
+.message--success {
+  background-color: #e1faea;
+  border: 1px solid #d2d1d6;
+}
+
 /*header*/
 .top-act__btn, .top-act__group, .top-act, .navbar__list, .top-bar {
   display: flex;
@@ -2566,7 +2579,7 @@ html {
 .auth {
   display: flex;
   min-height: 100vh;
-  color: var(--sign-up-text-color, #1a162e);
+  color: var(--auth-text-color, #1a162e);
   font-weight: 500;
   text-align: center;
   user-select: none;
@@ -2585,7 +2598,7 @@ html {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: var(--sign-up-media-bg);
+  background-color: var(--auth-media-bg);
 }
 @media (max-width: 767.98px) {
   .auth__media {
@@ -2631,7 +2644,7 @@ html {
 .auth__content {
   display: flex;
   align-items: center;
-  background-color: var(--sign-up-content-bg);
+  background-color: var(--auth-content-bg);
 }
 @media (max-width: 767.98px) {
   .auth__content {
@@ -2669,10 +2682,14 @@ html {
   align-items: center;
   justify-content: space-between;
   gap: 20px;
+  flex: 1;
   max-width: 460px;
   width: 100%;
   min-height: 100vh;
   margin: 0 auto;
+}
+.auth__main-content {
+  width: 100%;
 }
 .auth__form {
   margin-top: 50px;
@@ -2719,6 +2736,9 @@ html {
     margin-top: 20px;
   }
 }
+.auth__message {
+  margin-bottom: 15px;
+}
 .auth__input {
   display: block;
   width: 100%;
@@ -2727,12 +2747,12 @@ html {
   font-size: 1.8rem;
   line-height: 144.444%;
   border-radius: 10px;
-  border: 1px solid var(--sign-up-input-color);
+  border: 1px solid var(--auth-input-color);
   background-color: transparent !important;
   transition: border-color 0.3s background-color 0.3s;
 }
 .auth__input::placeholder {
-  color: var(--sign-up-input-color);
+  color: var(--auth-input-color);
 }
 .auth__input:focus-within {
   border-color: #77dae6;
@@ -2742,8 +2762,8 @@ html {
   visibility: inherit;
 }
 .auth__input:not(:placeholder-shown):invalid {
-  border-color: red;
-  background-color: rgba(255, 0, 0, 0.1);
+  border-color: #ed4337;
+  background-color: rgba(237, 67, 55, 0.1);
 }
 @media (max-width: 767.98px) {
   .auth__input {
@@ -2768,7 +2788,7 @@ html {
   left: 8px;
   bottom: -16px;
   font-size: 1.4rem;
-  color: red;
+  color: #ed4337;
 }
 @media (max-width: 767.98px) {
   .auth__error {
@@ -2781,13 +2801,11 @@ html {
   align-items: center;
   width: 100%;
   margin-top: 20px;
-  margin-bottom: 50px;
   font-size: 1.5rem;
 }
 @media (max-width: 767.98px) {
   .auth__row {
     font-size: 1.4rem;
-    margin-bottom: 20px;
   }
 }
 .auth__check {
@@ -2795,14 +2813,14 @@ html {
   align-items: center;
   gap: 10px;
   line-height: 146.667%;
-  color: var(--sign-up-input-color);
+  color: var(--auth-input-color);
   user-select: none;
 }
 .auth__check-box {
   position: relative;
   width: 20px;
   height: 20px;
-  border: 2px solid var(--sign-up-input-color);
+  border: 2px solid var(--auth-input-color);
   border-radius: 6px;
   appearance: none;
   -webkit-appearance: none;
@@ -2812,8 +2830,8 @@ html {
   background-color: #ffb700;
   border: 2px solid #ffb700;
 }
-.auth__check-box:checked ~ .sign-up__check-label {
-  color: var(--sign-up-text-color);
+.auth__check-box:checked ~ .auth__check-label {
+  color: var(--auth-text-color);
 }
 .auth__check-box:checked::before {
   content: "";
@@ -2829,6 +2847,14 @@ html {
 .auth__recovery {
   color: #0071dc;
   line-height: 146.667%;
+}
+.auth__btn-group {
+  margin-top: 50px;
+}
+@media (max-width: 767.98px) {
+  .auth__btn-group {
+    margin-top: 20px;
+  }
 }
 .auth__confirm {
   margin-bottom: 30px;

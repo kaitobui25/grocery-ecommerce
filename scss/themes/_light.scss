@@ -46,6 +46,9 @@ html {
     --auth-content-bg: #fff;
     --auth-input-color: #d2d1d6;
 
+    //message 
+    --message-color: #1a162e;
+
     @include abstracts.screen(lg) {
         --header-bg-color: #fff;
         --header-shadow-color: rgba(237, 237, 246, 0.2);

@@ -1,0 +1,14 @@
+@use "../abstracts";
+
+.message {
+    padding: 10px;
+    color: var(--message-color);
+    font-weight: normal;
+
+    border-radius: 5px;
+
+    &--success {
+        background-color: #e1faea;
+        border: 1px solid #d2d1d6;
+    }
+}

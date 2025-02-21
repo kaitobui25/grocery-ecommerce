@@ -52,6 +52,9 @@ html.dark {
     --auth-content-bg: #292E39;
     --auth-input-color: #B9BABE;
 
+    //message 
+    --message-color: #1a162e;
+    
     @include abstracts.screen(lg) {
         --header-shadow-color: rgba(0, 0, 0, 0.2);
         --side-bar-bg-color: #292e39;
