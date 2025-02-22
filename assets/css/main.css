@@ -2658,6 +2658,18 @@ html {
     translate: 100%;
   }
 }
+.auth__wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex: 1;
+  max-width: 460px;
+  width: 100%;
+  min-height: 100vh;
+  margin: 0 auto;
+}
 .auth__logo-media {
   margin-bottom: 151px;
 }
@@ -2670,23 +2682,12 @@ html {
 .auth__logo-content {
   justify-content: center;
   margin-top: 50px;
+  margin-bottom: var(--margin-bottom, 0);
 }
 @media (max-width: 767.98px) {
   .auth__logo-content {
     margin-top: 50px;
   }
-}
-.auth__wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-  flex: 1;
-  max-width: 460px;
-  width: 100%;
-  min-height: 100vh;
-  margin: 0 auto;
 }
 .auth__main-content {
   width: 100%;

@@ -88,23 +88,6 @@
         }
     }
 
-    &__logo-media {
-        margin-bottom: 151px;
-
-        @include abstracts.screen(md) {
-            margin-top: 80px;
-            margin-bottom: 0;
-        }
-    }
-
-    &__logo-content {
-        justify-content: center;
-        margin-top: 50px;
-        @include abstracts.screen(md) {
-            margin-top: 50px;
-        }
-    }
-
     &__wrapper {
         display: flex;
         flex-direction: column;
@@ -117,6 +100,24 @@
         width: 100%;
         min-height: 100vh;
         margin: 0 auto;
+    }
+
+    &__logo-media {
+        margin-bottom: 151px;
+
+        @include abstracts.screen(md) {
+            margin-top: 80px;
+            margin-bottom: 0;
+        }
+    }
+
+    &__logo-content {
+        justify-content: center;
+        margin-top: 50px;
+        margin-bottom: var(--margin-bottom, 0);
+        @include abstracts.screen(md) {
+            margin-top: 50px;
+        }
     }
 
     &__main-content {
